@@ -10,6 +10,7 @@ export default class App extends React.Component {
               style={{width: 150, height: 150}}
               source={{uri: 'https://img-new.cgtrader.com/items/652259/097635deb6/rock-mountain-501-3d-model-low-poly-obj-fbx-blend.jpg'}}
           />
+        <Text>Alerts</Text>
       </View>
     );
   }
