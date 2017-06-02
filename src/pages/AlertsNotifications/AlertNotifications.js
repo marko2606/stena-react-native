@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
+        backgroundColor: 'transparent'
     },
 
     pickerContainer: {

@@ -2,84 +2,136 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { Icon } from 'react-native-elements'
 
-const vessels = [
-    {
-        key: 1,
-        name: 'Stena 1',
-        status: 'active'
-    },
-    {
-        key: 2,
-        name: 'Stena 2',
-        status: 'active'
-    },
-    {
-        key: 3,
-        name: 'Stena 3',
-        status: 'active'
-    },
-    {
-        key: 4,
-        name: 'Stena 4',
-        status: 'active'
-    },
-    {
-        key: 5,
-        name: 'Stena 5',
-        status: 'active'
-    },
-    {
-        key: 6,
-        name: 'Stena 6',
-        status: 'active'
-    },
-    {
-        key: 7,
-        name: 'Stena 7',
-        status: 'active'
-    },
-    {
-        key: 8,
-        name: 'Stena 8',
-        status: 'active'
-    },
-    {
-        key: 9,
-        name: 'Stena 9',
-        status: 'active'
-    },
-    {
-        key: 10,
-        name: 'Stena 10',
-        status: 'active'
-    }
-];
-
-/*this.state = {
-    activeClick: false
-};*/
-
 export default class ListAlertsAndNotifications extends React.Component {
 
     constructor(){
         super();
         this.state = {
-            activeClick: false
+            loading: false,
+            data: [
+                {
+                    key: 1,
+                    name: 'Stena 1',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 2,
+                    name: 'Stena 2',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 3,
+                    name: 'Stena 3',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 4,
+                    name: 'Stena 4',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 5,
+                    name: 'Stena 5',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 6,
+                    name: 'Stena 6',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 7,
+                    name: 'Stena 7',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 8,
+                    name: 'Stena 8',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 9,
+                    name: 'Stena 9',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 10,
+                    name: 'Stena 10',
+                    status: 'active',
+                    activeClick: false
+                }
+            ],
+            page: 1,
+            seed: 1,
+            error: null,
+            refreshing: false
         }
+    }
+
+    onClickShowMore(item) {
+        let itemKey = item.key;
+
+        return this.state.data.map(vessel => {
+            if (vessel.key == itemKey) {
+                this.setState({
+                    data: [
+                        {
+                            ...item,
+                            activeClick: item.activeClick ? false : true
+                        }
+                    ]
+                });
+            }
+        });
 
     }
 
-    onClickShowMoreInfo() {
+    moreInfoAfterClick(item) {
         return (
-            <Text style={{ color: 'white', marginTop: 10 }}>More information about vessel</Text>
+            <View>
+                <Text style={{ color: 'white', marginTop: 10, marginLeft: 10, marginBottom: 10 }}>
+                    Vessel status is - {item.status}.
+                </Text>
+
+                <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Icon
+                        name='clear'
+                        color='rgb(32, 177, 151)'
+                        iconStyle={{ marginLeft: 10 }}
+                    />
+                    <Text style={styles.iconsText}>DISMISS</Text>
+
+                    <Icon
+                        name='location-searching'
+                        color='rgb(32, 177, 151)'
+                    />
+                    <Text style={styles.iconsText}>LOCATE</Text>
+
+                    <Icon
+                        name='line-style'
+                        color='rgb(32, 177, 151))'
+                    />
+                    <Text style={styles.iconsText}>DETAILS</Text>
+                </View>
+            </View>
         )
     }
 
-    _renderItem({item}) {
+    _renderItem(item) {
         return (
             <View style={styles.touchableContainer}>
                 <TouchableOpacity
                     style={styles.touchableAlert}
+                    onPress={() => { return this.onClickShowMore(item) }}
                 >
                     <Icon
                         name='warning'
@@ -94,31 +146,41 @@ export default class ListAlertsAndNotifications extends React.Component {
                         <Text style={{ color: 'rgb(146, 164, 170)', fontSize: 10 }}>SPEED OVER 15% INSTRUCTED</Text>
                     </View>
 
-                    <Icon
-                        name="keyboard-arrow-down"
-                        color='rgb(146, 164, 170)'
-                        iconStyle={{ marginRight: 10 }}
-                    />
+                    {
+                        item.activeClick ?
+                            <Icon
+                                name="keyboard-arrow-up"
+                                color='rgb(146, 164, 170)'
+                                iconStyle={{ marginRight: 10 }}
+                            />
+                            :
+                            <Icon
+                                name="keyboard-arrow-down"
+                                color='rgb(146, 164, 170)'
+                                iconStyle={{ marginRight: 10 }}
+                            />
+                    }
                 </TouchableOpacity>
 
-{/*                {
-                    this.state.activeClick ? (
-                        <View>
-                            <Text style={{ color: 'white', marginTop: 10 }}>More information about vessel</Text>
-                        </View>
-                    ): null
-                }*/}
+                {
+                    item.activeClick ? this.moreInfoAfterClick(item) : null
+                }
 
             </View>
         )
     }
 
     render() {
+        //console.log(this.state.data);
         return (
             <View style={styles.container}>
                 <FlatList
-                    data={vessels}
-                    renderItem={this._renderItem}
+                    data={this.state.data}
+                    renderItem={({item}) => {
+                       return this._renderItem(item)
+                    }}
+                    keyExtractor={(item) => { return item.key }}
+                    extraData={this.state}
                 />
             </View>
         );
@@ -147,5 +209,11 @@ const styles = StyleSheet.create({
     touchableAlert: {
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    iconsText: {
+        fontSize: 10,
+        color: 'white',
+        marginLeft: -40,
+        paddingRight: 10
     }
 });

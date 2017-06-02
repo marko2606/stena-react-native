@@ -188,7 +188,8 @@ var styles = _reactNative.StyleSheet.create({
         alignItems: 'center'
     },
     buttonText: {
-        color: 'white'
+        color: 'white',
+        backgroundColor: 'transparent'
     },
 
     pickerContainer: {
