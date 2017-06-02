@@ -1,7 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Picker, FlatList } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Picker } from 'react-native';
+
+import { Icon } from 'react-native-elements'
 
 import { Gradient } from '../../components/Gradient';
+import { Footer } from '../../components/FooterAlertsNotifications';
+
 import List from './ListAlertsAndNotifications';
 
 export default class AlertNotifications extends React.Component {
@@ -51,6 +55,23 @@ export default class AlertNotifications extends React.Component {
                     <List />
 
                 </View>
+
+                <Footer>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
+                        <Icon
+                            name='warning'
+                            color='rgb(156, 57, 53)'
+                            iconStyle={{ marginTop: 6 }}
+                        />
+
+                        <Icon
+                            name='notifications-active'
+                            color='white'
+                            iconStyle={{ marginTop: 6 }}
+                        />
+                    </View>
+                </Footer>
+
             </Gradient>
         );
     }

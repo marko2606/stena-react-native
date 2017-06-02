@@ -10,7 +10,11 @@ var _react2 = babelHelpers.interopRequireDefault(_react);
 
 var _reactNative = require('react-native');
 
+var _reactNativeElements = require('react-native-elements');
+
 var _Gradient = require('../../components/Gradient');
+
+var _FooterAlertsNotifications = require('../../components/FooterAlertsNotifications');
 
 var _ListAlertsAndNotifications = require('./ListAlertsAndNotifications');
 
@@ -40,43 +44,26 @@ var AlertNotifications = function (_React$Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 22
                     }
                 },
                 _react2.default.createElement(
                     _reactNative.View,
                     { style: styles.container, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
+                            lineNumber: 23
                         }
                     },
                     _react2.default.createElement(
                         _reactNative.View,
                         { style: styles.topButtons, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 22
+                                lineNumber: 26
                             }
                         },
                         _react2.default.createElement(
                             _reactNative.TouchableOpacity,
                             { style: [styles.buttonsStyle, { backgroundColor: 'rgb(32, 177, 151)' }], __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 23
-                                }
-                            },
-                            _react2.default.createElement(
-                                _reactNative.Text,
-                                { style: styles.buttonText, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 24
-                                    }
-                                },
-                                'ACTIVE'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            _reactNative.TouchableOpacity,
-                            { style: styles.buttonsStyle, __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 27
                                 }
@@ -88,6 +75,23 @@ var AlertNotifications = function (_React$Component) {
                                         lineNumber: 28
                                     }
                                 },
+                                'ACTIVE'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            _reactNative.TouchableOpacity,
+                            { style: styles.buttonsStyle, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 31
+                                }
+                            },
+                            _react2.default.createElement(
+                                _reactNative.Text,
+                                { style: styles.buttonText, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 32
+                                    }
+                                },
                                 'DISMISSED'
                             )
                         )
@@ -96,7 +100,7 @@ var AlertNotifications = function (_React$Component) {
                         _reactNative.View,
                         { style: styles.pickerContainer, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 33
+                                lineNumber: 37
                             }
                         },
                         _react2.default.createElement(
@@ -109,47 +113,47 @@ var AlertNotifications = function (_React$Component) {
                                 style: { color: 'rgb(146, 164, 170)' },
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 34
+                                    lineNumber: 38
                                 }
                             },
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'Filter Alerts by group...', value: 'initial', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 39
+                                    lineNumber: 43
                                 }
                             }),
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'ALL VESSELS', value: 'allVessels', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 40
+                                    lineNumber: 44
                                 }
                             }),
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'MY FLEET', value: 'myFleet', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 41
+                                    lineNumber: 45
                                 }
                             }),
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'SUEZMAX', value: 'suezmax', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 42
+                                    lineNumber: 46
                                 }
                             }),
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'STENA BULK', value: 'stenaBulk', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 43
+                                    lineNumber: 47
                                 }
                             }),
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'STENA WECO', value: 'stenaWeco', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 44
+                                    lineNumber: 48
                                 }
                             }),
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'GOLDEN STENA WECO', value: 'goldenStenaWeco', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 45
+                                    lineNumber: 49
                                 }
                             }),
                             _react2.default.createElement(_reactNative.Picker.Item, { label: 'STENA LNG', value: 'stenaLng', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 46
+                                    lineNumber: 50
                                 }
                             })
                         )
@@ -157,9 +161,44 @@ var AlertNotifications = function (_React$Component) {
                     _react2.default.createElement(_ListAlertsAndNotifications2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 51
+                            lineNumber: 55
                         }
                     })
+                ),
+                _react2.default.createElement(
+                    _FooterAlertsNotifications.Footer,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 59
+                        }
+                    },
+                    _react2.default.createElement(
+                        _reactNative.View,
+                        { style: { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 60
+                            }
+                        },
+                        _react2.default.createElement(_reactNativeElements.Icon, {
+                            name: 'warning',
+                            color: 'rgb(156, 57, 53)',
+                            iconStyle: { marginTop: 6 },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 61
+                            }
+                        }),
+                        _react2.default.createElement(_reactNativeElements.Icon, {
+                            name: 'notifications-active',
+                            color: 'white',
+                            iconStyle: { marginTop: 6 },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 67
+                            }
+                        })
+                    )
                 )
             );
         }
