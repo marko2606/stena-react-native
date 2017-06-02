@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Dimensions, Text } from 'react-native';
+import { View, Dimensions } from 'react-native';
+
+const HEIGHT_DEVICE = Dimensions.get('window').height;
 
 export const Footer = (props) => {
     return (
@@ -11,9 +13,7 @@ export const Footer = (props) => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    top: '90%',
-                    borderTopWidth: 1,
-                    borderTopColor: 'rgb(32, 177, 151)'
+                    top: HEIGHT_DEVICE - 65
                 }}
             >
                 {props.children}

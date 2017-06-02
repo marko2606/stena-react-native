@@ -1,6 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { Icon } from 'react-native-elements'
+
+
+const HEIGHT_DEVICE = Dimensions.get('window').height;
 
 export default class ListAlertsAndNotifications extends React.Component {
 
@@ -79,20 +82,13 @@ export default class ListAlertsAndNotifications extends React.Component {
 
     onClickShowMore(item) {
         let itemKey = item.key;
+        let items = this.state.data;
 
-        return this.state.data.map(vessel => {
-            if (vessel.key == itemKey) {
-                this.setState({
-                    data: [
-                        {
-                            ...item,
-                            activeClick: item.activeClick ? false : true
-                        }
-                    ]
-                });
-            }
-        });
+        items[itemKey - 1].activeClick = !item.activeClick;
 
+        this.setState({
+            data: items
+        })
     }
 
     moreInfoAfterClick(item) {
@@ -171,7 +167,6 @@ export default class ListAlertsAndNotifications extends React.Component {
     }
 
     render() {
-        //console.log(this.state.data);
         return (
             <View style={styles.container}>
                 <FlatList
@@ -191,8 +186,8 @@ const styles = StyleSheet.create({
     container: {
         marginLeft: 5,
         marginRight: 5,
-        marginBottom: 40,
-        marginTop: 10,
+        marginBottom: 65,
+        marginTop: 5,
         flex: 1
     },
     touchableContainer: {
