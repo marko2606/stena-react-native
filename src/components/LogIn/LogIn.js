@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, KeyboardAvoidingView } from 'react-native';
+import { View, Image, Text, Keyboard, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { Components } from 'expo';
 const { LinearGradient } = Components;
@@ -8,6 +8,46 @@ import Input from './Input';
 import LoginBtn from './LoginBtn';
 
 export default class LogIn extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputPosition: 'relative',
+            inputBottom: 0
+        };
+
+        if (Platform.OS === 'android') {
+            UIManager.setLayoutAnimationEnabledExperimental(true);
+        }
+    }
+
+    componentWillMount () {
+        LayoutAnimation.spring();
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow.bind(this));
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide.bind(this));
+    }
+
+    componentWillUnmount () {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
+    }
+
+    keyboardDidShow(e) {
+        LayoutAnimation.spring();
+        this.setState({
+            inputPosition: 'absolute',
+            inputBottom: e.endCoordinates.height
+        });
+
+    }
+
+    keyboardDidHide() {
+        console.log('keyboard down!');
+        this.setState({
+            inputPosition: 'relative',
+            inputBottom: 0
+        });
+    }
 
     render() {
         return (
@@ -36,10 +76,14 @@ export default class LogIn extends React.Component {
                         style={styles.image}
                     />
 
-                    <KeyboardAvoidingView behavior={'position'} style={{width: '100%'}}>
+                    <View style={{
+                        position: this.state.inputPosition,
+                        width: '100%',
+                        bottom: this.state.inputBottom
+                    }}>
                         <Input placeholder="Username"/>
                         <Input placeholder="Password"/>
-                    </KeyboardAvoidingView>
+                    </View>
 
                     <LoginBtn/>
 
@@ -59,7 +103,7 @@ export default class LogIn extends React.Component {
     }
 }
 
-const styles = {
+const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
@@ -125,4 +169,4 @@ const styles = {
         height: '100%',
         width: '100%'
     }
-};
+});

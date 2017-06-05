@@ -2,9 +2,7 @@ import React from 'react';
 import {TouchableOpacity, View, Text} from 'react-native'
 
 export default class LoginBtn extends React.Component {
-    LoginAttempt() {
-        console.log('Login Attempt')
-    }
+
     render() {
         return (
             <TouchableOpacity
@@ -16,7 +14,6 @@ export default class LoginBtn extends React.Component {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
-                onPress={this.LoginAttempt.bind(this)}
             >
                 <View style={{
                     backgroundColor: '#1DA68A',
