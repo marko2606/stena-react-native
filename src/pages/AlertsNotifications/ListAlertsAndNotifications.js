@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions, ActivityIndicator } from 'react-native';
 import { Icon } from 'react-native-elements'
 
+import Swipe from './Swipe';
 
 const HEIGHT_DEVICE = Dimensions.get('window').height;
 
@@ -111,14 +112,14 @@ export default class ListAlertsAndNotifications extends React.Component {
     }
 
     onClickShowMore(item) {
-        let itemKey = item.key;
+/*        let itemKey = item.key;
         let items = this.state.data;
 
         items[itemKey - 1].activeClick = !item.activeClick;
 
         this.setState({
             data: items
-        })
+        })*/
     }
 
     moreInfoAfterClick(item) {
@@ -172,20 +173,14 @@ export default class ListAlertsAndNotifications extends React.Component {
                         <Text style={{ color: 'rgb(146, 164, 170)', fontSize: 10 }}>SPEED OVER 15% INSTRUCTED</Text>
                     </View>
 
-                    {
-                        item.activeClick ?
-                            <Icon
-                                name="keyboard-arrow-up"
-                                color='rgb(146, 164, 170)'
-                                iconStyle={{ marginRight: 10 }}
-                            />
-                            :
-                            <Icon
-                                name="keyboard-arrow-down"
-                                color='rgb(146, 164, 170)'
-                                iconStyle={{ marginRight: 10 }}
-                            />
-                    }
+{/*                    <Icon
+                        name="keyboard-arrow-left"
+                        color='rgb(146, 164, 170)'
+                        iconStyle={{ marginRight: 10 }}
+                    />*/}
+
+                    <Swipe/>
+
                 </TouchableOpacity>
 
                 {
@@ -207,6 +202,15 @@ export default class ListAlertsAndNotifications extends React.Component {
             </View>
         )
     }
+
+    swipeInformation() {
+        return (
+            <View style={styles.listHeader}>
+                <Text style={{ color: 'rgba(186, 204, 210, 0.5)' }}>SWIPE TO RIGHT FOR MORE OPTIONS</Text>
+            </View>
+        )
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -222,7 +226,10 @@ export default class ListAlertsAndNotifications extends React.Component {
                     }}
                     onEndReachedThreshold={1}
                     onEndReached={({ distanceFromEnd }) => {
-                        console.log('on end reached ', distanceFromEnd);
+                       // console.log('on end reached ', distanceFromEnd);
+                    }}
+                    ListHeaderComponent={() => {
+                        return this.swipeInformation()
                     }}
                 />
             </View>
@@ -232,22 +239,15 @@ export default class ListAlertsAndNotifications extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginLeft: 5,
-        marginRight: 5,
         marginBottom: 65,
         marginTop: 5,
         flex: 1
     },
     touchableContainer: {
-        backgroundColor: 'rgb(11, 41, 53)',
-        marginTop: 10,
-        marginBottom: 10,
-        marginLeft: 15,
-        marginRight: 15,
-        paddingTop: 12,
-        paddingBottom: 12,
-        borderWidth: 1,
-        borderColor: 'rgba(32, 177, 151, 0.5)'
+        paddingTop: 15,
+        paddingBottom: 15,
+        borderTopWidth: 0.5,
+        borderColor: 'rgba(186, 204, 210, 0.5)'
     },
     touchableAlert: {
         flexDirection: 'row',
@@ -258,5 +258,12 @@ const styles = StyleSheet.create({
         color: 'white',
         marginLeft: -40,
         paddingRight: 10
+    },
+    listHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 15,
+        paddingBottom: 15
     }
 });
