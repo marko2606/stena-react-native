@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions, ActivityIndicator } from 'react-native';
 import { Icon } from 'react-native-elements'
 
 
@@ -69,6 +69,36 @@ export default class ListAlertsAndNotifications extends React.Component {
                 {
                     key: 10,
                     name: 'Stena 10',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 11,
+                    name: 'Stena 11',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 12,
+                    name: 'Stena 12',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 13,
+                    name: 'Stena 13',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 14,
+                    name: 'Stena 14',
+                    status: 'active',
+                    activeClick: false
+                },
+                {
+                    key: 15,
+                    name: 'Stena 15',
                     status: 'active',
                     activeClick: false
                 }
@@ -166,6 +196,17 @@ export default class ListAlertsAndNotifications extends React.Component {
         )
     }
 
+    renderFooter(){
+        if(!this.state.loading) {
+            return null;
+        }
+
+        return (
+            <View style={{ paddingVertical: 20 }}>
+                <ActivityIndicator animating size="large" />
+            </View>
+        )
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -176,6 +217,13 @@ export default class ListAlertsAndNotifications extends React.Component {
                     }}
                     keyExtractor={(item) => { return item.key }}
                     extraData={this.state}
+                    ListFooterComponent={() => {
+                        return this.renderFooter()
+                    }}
+                    onEndReachedThreshold={1}
+                    onEndReached={({ distanceFromEnd }) => {
+                        console.log('on end reached ', distanceFromEnd);
+                    }}
                 />
             </View>
         );
