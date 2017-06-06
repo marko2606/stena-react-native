@@ -1,3 +1,11 @@
+export const colors = {
+    primaryColor: '#28FFCA',
+    whiteColor: '#fff',
+    gradientPrimaryColor1: '#1D6273',
+    gradientPrimaryColor2: '#143D4D',
+    gradientPrimaryColor3: '#181A20'
+};
+
 export const colors2 = {
     primaryColor: '#0d2832',
     primaryColor2: '#1b546a',
