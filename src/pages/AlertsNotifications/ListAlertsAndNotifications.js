@@ -1,10 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
 import { Icon } from 'react-native-elements'
 
 import Swipe from './Swipe';
-
-const HEIGHT_DEVICE = Dimensions.get('window').height;
 
 export default class ListAlertsAndNotifications extends React.Component {
 
@@ -163,25 +161,19 @@ export default class ListAlertsAndNotifications extends React.Component {
                     <Icon
                         name='warning'
                         color='rgb(156, 57, 53)'
-                        iconStyle={{ marginLeft: 10 }}
+                        iconStyle={{ marginLeft: 15, paddingRight: 15 }}
                     />
 
-                    <View style={{ flexDirection: 'column', marginLeft: -30 }}>
+                    <View style={{ flexDirection: 'column' }}>
                         <Text style={{ color: 'white' }}>
                             {item.name}
                         </Text>
                         <Text style={{ color: 'rgb(146, 164, 170)', fontSize: 10 }}>SPEED OVER 15% INSTRUCTED</Text>
                     </View>
 
-{/*                    <Icon
-                        name="keyboard-arrow-left"
-                        color='rgb(146, 164, 170)'
-                        iconStyle={{ marginRight: 10 }}
-                    />*/}
-
-                    <Swipe/>
-
                 </TouchableOpacity>
+
+                <Swipe/>
 
                 {
                     item.activeClick ? this.moreInfoAfterClick(item) : null
@@ -247,7 +239,10 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         paddingBottom: 15,
         borderTopWidth: 0.5,
-        borderColor: 'rgba(186, 204, 210, 0.5)'
+        borderColor: 'rgba(186, 204, 210, 0.5)',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     touchableAlert: {
         flexDirection: 'row',

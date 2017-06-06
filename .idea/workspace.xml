@@ -32,8 +32,8 @@
       <file leaf-file-name="AlertNotifications.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/AlertNotifications.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="891">
-              <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+            <state relative-caret-position="520">
+              <caret line="26" column="90" lean-forward="true" selection-start-line="26" selection-start-column="90" selection-end-line="26" selection-end-column="109" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -41,24 +41,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListAlertsAndNotifications.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ListAlertsAndNotifications.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/ListAlertsAndNotifications.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="258" column="24" lean-forward="true" selection-start-line="258" selection-start-column="24" selection-end-line="258" selection-end-column="24" />
+            <state relative-caret-position="-2409">
+              <caret line="103" column="14" lean-forward="true" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#453#3164#0" expanded="false" />
+                <element signature="e#385#3096#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Swipe.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Swipe.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/Swipe.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="811">
-              <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -91,6 +91,9 @@
       <find>on en</find>
       <find>grad</find>
       <find>250</find>
+      <find>90</find>
+      <find>onClickShowMore</find>
+      <find>HEIGHT_DEVICEHEIGHT_DEVICE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,8 +115,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/pages/AlertsNotifications/AlertNotifications.js" />
         <option value="$PROJECT_DIR$/src/components/Gradient.js" />
-        <option value="$PROJECT_DIR$/src/pages/AlertsNotifications/Swipe.js" />
         <option value="$PROJECT_DIR$/src/pages/AlertsNotifications/ListAlertsAndNotifications.js" />
+        <option value="$PROJECT_DIR$/src/pages/AlertsNotifications/Swipe.js" />
       </list>
     </option>
   </component>
@@ -341,12 +344,12 @@
       <workItem from="1496308768208" duration="15482000" />
       <workItem from="1496383804186" duration="13671000" />
       <workItem from="1496399690068" duration="10905000" />
-      <workItem from="1496643165058" duration="22096000" />
+      <workItem from="1496643165058" duration="29353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85233000" />
+    <option name="totallyTimeSpent" value="92490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -684,16 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/AlertNotifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Gradient.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -704,10 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/Swipe.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/AlertNotifications.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        <state relative-caret-position="520">
+          <caret line="26" column="90" lean-forward="true" selection-start-line="26" selection-start-column="90" selection-end-line="26" selection-end-column="109" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -716,11 +709,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/ListAlertsAndNotifications.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="258" column="24" lean-forward="true" selection-start-line="258" selection-start-column="24" selection-end-line="258" selection-end-column="24" />
+        <state relative-caret-position="-2409">
+          <caret line="103" column="14" lean-forward="true" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#453#3164#0" expanded="false" />
+            <element signature="e#385#3096#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/AlertsNotifications/Swipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
