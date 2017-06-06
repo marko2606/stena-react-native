@@ -222,7 +222,7 @@ export default class ListAlertsAndNotifications extends React.Component {
                     }}
                     onEndReachedThreshold={1}
                     onEndReached={({ distanceFromEnd }) => {
-                        console.log('on end reached ', distanceFromEnd);
+                       // console.log('on end reached ', distanceFromEnd);
                     }}
                 />
             </View>

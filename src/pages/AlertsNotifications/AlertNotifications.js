@@ -1,11 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Picker } from 'react-native';
 
-import { Icon } from 'react-native-elements'
-
 import { Gradient } from '../../components/Gradient';
-import { Footer } from '../../components/FooterAlertsNotifications';
-
+import { FooterAlertsNotifications } from './FooterAlertsNotifications'
 import List from './ListAlertsAndNotifications';
 
 export default class AlertNotifications extends React.Component {
@@ -56,29 +53,8 @@ export default class AlertNotifications extends React.Component {
 
                 </View>
 
-                <Footer>
-
-                    <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                        <View
-                            style={styles.footerBorderTop}
-                        />
-
-                        <View style={{ flexDirection: 'row' }}>
-                            <Icon
-                                name='warning'
-                                color='rgb(156, 57, 53)'
-                                iconStyle={{ marginTop: 6, marginRight: '35%' }}
-                            />
-
-                            <Icon
-                                name='notifications-active'
-                                color='white'
-                                iconStyle={{ marginTop: 6, marginLeft: '35%' }}
-                            />
-                        </View>
-                    </View>
-
-                </Footer>
+                {/* --- Footer --- */}
+                <FooterAlertsNotifications />
 
             </Gradient>
         );
@@ -112,13 +88,5 @@ const styles = StyleSheet.create({
         marginRight: '5%',
         marginTop: 20,
         backgroundColor: 'rgb(11, 41, 53)'
-    },
-    footerBorderTop: {
-        borderTopWidth: 2,
-        borderTopColor: 'rgb(32, 177, 151)',
-        width: '85%'
     }
 });
-
-// 11 41 53
-// 146 164 170  gray
