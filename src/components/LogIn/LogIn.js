@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, Keyboard, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
+import { View, Image, Text, Keyboard, StyleSheet, LayoutAnimation, Platform, UIManager, Dimensions } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { Components } from 'expo';
 const { LinearGradient } = Components;
@@ -13,7 +13,9 @@ export default class LogIn extends React.Component {
         super(props);
         this.state = {
             inputPosition: 'relative',
-            inputBottom: 0
+            inputBottom: 0,
+            screenWidth: Dimensions.get('screen').width,
+            SOPFontSize: 0
         };
 
         if (Platform.OS === 'android') {
@@ -22,6 +24,7 @@ export default class LogIn extends React.Component {
     }
 
     componentWillMount () {
+        this.setState({SOPFontSize: this.state.screenWidth / 20.5});
         LayoutAnimation.spring();
         this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow.bind(this));
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide.bind(this));
@@ -69,10 +72,14 @@ export default class LogIn extends React.Component {
                         <Text style={styles.h1}>Stena Bulk</Text>
                     </View>
                     <Text style={styles.welcomeText}>WELCOME TO</Text>
-                    <Text style={styles.SOPText}>STENA OPERATIONAL PLATFORM</Text>
+                    <Text
+                        style={Object.assign({fontSize: this.state.SOPFontSize},styles.SOPText)}>
+                        STENA OPERATIONAL PLATFORM
+                    </Text>
 
                     <Image
-                        source={require('../../assets/images/shipLogIn.png')}
+                        resizeMode={'contain'}
+                        source={require('../../assets/images/vessels-management-vessel.png')}
                         style={styles.image}
                     />
 
@@ -103,7 +110,7 @@ export default class LogIn extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
+const styles = {
     container: {
         width: '100%',
         height: '100%',
@@ -130,15 +137,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent'
     },
     SOPText: {
-        maxWidth: '80%',
+        width: '80%',
+        textAlign: 'center',
         color: '#FFFFFF',
         fontWeight: '600',
-        fontSize: 12,
         backgroundColor: 'transparent'
     },
     image: {
         marginTop: 30,
-        marginBottom: 30
+        marginBottom: 30,
+        width: '80%'
     },
     footer: {
         width: '80%',
@@ -169,4 +177,4 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%'
     }
-});
+};
