@@ -1,9 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Picker } from 'react-native';
+import { View, Picker } from 'react-native';
 
-import { Gradient } from '../../components/Gradient';
-import { FooterAlertsNotifications } from './FooterAlertsNotifications'
+import { Gradient } from '../../shared/';
+import { TopButtons } from './TopButtons';
 import List from './ListAlertsAndNotifications';
+import { FooterAlertsNotifications } from './FooterAlertsNotifications'
+
+import { styles } from './style';
+
 
 export default class AlertNotifications extends React.Component {
 
@@ -15,27 +19,20 @@ export default class AlertNotifications extends React.Component {
     }
 
     render() {
+        const { container, pickerContainer, pickerStyle } = styles;
         return (
             <Gradient>
-                <View style={styles.container}>
+                <View style={container}>
 
                     {/* --- Top buttons --- */}
-                    <View style={styles.topButtons}>
-                        <TouchableOpacity style={[styles.buttonsStyle, { backgroundColor: 'rgb(32, 177, 151)'} ]}>
-                            <Text style={styles.buttonText}>ACTIVE</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={styles.buttonsStyle} >
-                            <Text style={styles.buttonText}>DISMISSED</Text>
-                        </TouchableOpacity>
-                    </View>
+                    <TopButtons/>
 
                     {/* --- Filter bar --- */}
-                    <View style={styles.pickerContainer}>
+                    <View style={pickerContainer}>
                         <Picker
                             selectedValue={this.state.selectedFilterAlerts}
                             onValueChange={(filter) => this.setState({ selectedFilterAlerts: filter })}
-                            style={{ color: 'rgb(146, 164, 170)' }}
+                            style={pickerStyle}
                         >
                             <Picker.Item label="Filter Alerts by group..." value="initial" />
                             <Picker.Item label="ALL VESSELS" value="allVessels" />
@@ -60,33 +57,3 @@ export default class AlertNotifications extends React.Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    topButtons: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        paddingTop: 10
-    },
-    buttonsStyle: {
-        height: 40,
-        width: '45%',
-        borderWidth: 1,
-        borderColor: 'rgb(32, 177, 151)',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    buttonText: {
-        color: 'white',
-        backgroundColor: 'transparent'
-    },
-
-    pickerContainer: {
-        marginLeft: '5%',
-        marginRight: '5%',
-        marginTop: 20,
-        backgroundColor: 'rgb(11, 41, 53)'
-    }
-});

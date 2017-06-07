@@ -1,26 +1,30 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-
+import { View } from 'react-native';
 import { Icon } from 'react-native-elements'
 
-import { Footer } from '../../components/Footer';
+import { Footer } from '../../shared/';
+
+import {colors2} from '../../Colors';
+import { styles } from './style';
+
 
 export const FooterAlertsNotifications = () => {
+    const { footerContainer, footerIconContainer } = styles;
     return (
         <Footer>
 
-            <View style={styles.container}>
+            <View style={footerContainer}>
 
-                <View style={{ flexDirection: 'row' }}>
+                <View style={footerIconContainer}>
                     <Icon
                         name='warning'
-                        color='rgb(156, 57, 53)'
+                        color={colors2['redWarning']}
                         iconStyle={{ marginTop: 6, marginRight: '35%' }}
                     />
 
                     <Icon
                         name='notifications-active'
-                        color='white'
+                        color={colors2['white']}
                         iconStyle={{ marginTop: 6, marginLeft: '35%' }}
                     />
                 </View>
@@ -29,10 +33,3 @@ export const FooterAlertsNotifications = () => {
         </Footer>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-});
