@@ -1,13 +1,18 @@
+import {colors} from '../../Colors';
+
 export const styles = {
     dashboardElementContainer: {
         alignItems: 'center'
     },
     dashboardElementTitle: {
-        color: '#fff',
+        color: colors['whiteColor'],
         fontSize: 14,
         flexGrow: 1,
         paddingTop: 10,
         textAlign: 'center'
+    },
+    dashboardElementIcon: {
+        color: colors['primaryColor']
     },
     dashboardListContainer: {
         justifyContent: 'space-around',
@@ -19,7 +24,7 @@ export const styles = {
     dashboardProfileImage: {
         alignSelf: 'center',
         borderWidth: 4,
-        borderColor: '#143D4D',
+        borderColor: colors['gradientPrimaryColor2'],
         borderRadius: 50,
         height: 100,
         marginTop: 5,
@@ -27,7 +32,7 @@ export const styles = {
     },
     dashboardProfileUsername: {
         alignSelf: 'center',
-        color: '#fff',
+        color: colors['whiteColor'],
         fontSize: 22
     },
     dashboardProfileGradient: {

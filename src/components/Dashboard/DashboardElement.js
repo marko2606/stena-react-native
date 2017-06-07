@@ -6,12 +6,16 @@ import { Counter } from '../../shared/Counter/Counter';
 import icoMoonConfig from '../../utils/config.json';
 
 import {styles} from './DashboardStyle';
+import {colors} from '../../Colors';
 
 const height = Dimensions.get('window').height;
 const width = Dimensions.get('window').width;
 
-const boxHeight = (height / 3) - 110;
-const boxWidth = width / 3;
+const dashboardProfileHeight = 110; // TODO this will change when router is implemented
+const itemsPerRow = 3;
+
+const boxHeight = (height / itemsPerRow) - dashboardProfileHeight;
+const boxWidth = width / itemsPerRow;
 
 const Icon = createIconSetFromIcoMoon(icoMoonConfig, "icomoon");
 
@@ -20,7 +24,7 @@ export class DashboardElement extends Component {
         super();
         this.state = {
             dashboardElementTitleColor: {
-                color: '#fff'
+                color: colors['whiteColor']
             },
             fontLoaded: false
         }
@@ -37,7 +41,7 @@ export class DashboardElement extends Component {
     _onPress() {
         this.setState({
             dashboardElementTitleColor: {
-                color: '#28FFCA'
+                color: colors['primaryColor']
             }
         });
     }
@@ -45,7 +49,7 @@ export class DashboardElement extends Component {
     _onPressOut() {
         this.setState({
             dashboardElementTitleColor: {
-                color: '#fff'
+                color: colors['whiteColor']
             }
         });
     }
@@ -57,19 +61,18 @@ export class DashboardElement extends Component {
     }
 
     render() {
-        const {dashboardElementContainer, dashboardElementTitle} = styles;
+        const {dashboardElementContainer, dashboardElementTitle, dashboardElementIcon} = styles;
 
         if (!this.state.fontLoaded) { return null;}
 
         return (
 
-            <TouchableHighlight onPress={() => {
-            }}
+            <TouchableHighlight onPress={() => { }}
                                 underlayColor="transparent"
                                 onShowUnderlay={this._onPress.bind(this)}
                                 onHideUnderlay={this._onPressOut.bind(this)}>
                 <View style={{...dashboardElementContainer, height: boxHeight, width: boxWidth}}>
-                    <Icon name={this.props.icon} size={50} color="#28FFCA"/>
+                    <Icon name={this.props.icon} size={50} style={dashboardElementIcon}/>
                     <Text
                         style={{...dashboardElementTitle, ...this.state.dashboardElementTitleColor}}>{this.props.title.toUpperCase()}</Text>
                     {this._renderCounter()}
