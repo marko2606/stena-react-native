@@ -62,7 +62,7 @@ export default class ListAlertsAndNotifications extends React.Component {
     }
 
     _renderItem(item) {
-        const { touchableContainer, touchableAlert } = styles;
+        const { touchableContainer, touchableAlert, touchableContent, detailContent, titleContent } = styles;
 
         return (
             <View style={touchableContainer}>
@@ -76,24 +76,24 @@ export default class ListAlertsAndNotifications extends React.Component {
                         iconStyle={{ marginLeft: 10 }}
                     />
 
-                    <View style={{ flexDirection: 'column', marginLeft: -30 }}>
-                        <Text style={{ color: 'white' }}>
+                    <View style={touchableContent}>
+                        <Text style={titleContent}>
                             {item.name}
                         </Text>
-                        <Text style={{ color: 'rgb(146, 164, 170)', fontSize: 10 }}>SPEED OVER 15% INSTRUCTED</Text>
+                        <Text style={detailContent}>SPEED OVER 15% INSTRUCTED</Text>
                     </View>
 
                     {
                         item.activeClick ?
                             <Icon
                                 name="keyboard-arrow-up"
-                                color='rgb(146, 164, 170)'
+                                color={colors2['gray']}
                                 iconStyle={{ marginRight: 10 }}
                             />
                             :
                             <Icon
                                 name="keyboard-arrow-down"
-                                color='rgb(146, 164, 170)'
+                                color={colors2['gray']}
                                 iconStyle={{ marginRight: 10 }}
                             />
                     }
@@ -134,7 +134,7 @@ export default class ListAlertsAndNotifications extends React.Component {
                     }}
                     onEndReachedThreshold={1}
                     onEndReached={({ distanceFromEnd }) => {
-                       // console.log('on end reached ', distanceFromEnd);
+                       // TODO loader
                     }}
                 />
             </View>

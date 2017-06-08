@@ -1,15 +1,17 @@
 import React from 'react';
-import { View, Platform, NativeModules } from 'react-native';
+import { View} from 'react-native';
 
 import AlertNotifications from './src/components/AlertsNotifications/AlertNotifications';
 
-const { StatusBarManager } = NativeModules;
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
+import { styles } from './src/GlobalStyle';
 
 export default class App extends React.Component {
-    render() {
+
+render() {
+    const { globalContainer } = styles;
+
         return (
-            <View style={{ flex: 1, paddingTop: STATUSBAR_HEIGHT }}>
+            <View style={globalContainer}>
                 <AlertNotifications />
             </View>
         );

@@ -1,10 +1,10 @@
 export const colors2 = {
-    primaryColor: 'rgb(13, 40, 50)',
-    primaryColor2: 'rgb(27,84,106)',
-    footerBackgroundColor: 'rgb(11, 41, 53)',
-    mainGreen: 'rgb(32, 177, 151)',
-    redWarning: 'rgb(156, 57, 53)',
+    primaryColor: '#0d2832',
+    primaryColor2: '#1b546a',
+    footerBackgroundColor: '#0b2935',
+    mainGreen: '#20b197',
+    mainGreenOpacity: 'rgba(32, 177, 151, 0.5)',
+    redWarning: '#9c3935',
     white: '#fff',
-    gray: 'rgb(146, 164, 170)',
-    borderColorFlatListItem: 'rgba(32, 177, 151, 0.5)'
+    gray: '#92a4aa',
 };

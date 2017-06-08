@@ -1,20 +1,17 @@
 import React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
+import { colors2 } from '../../Colors';
 import { styles } from './style';
 
-export const TopButtons = () => {
-    const { topButtons, buttonsStyle, buttonText } = styles;
+export const TopButtons = ({props}) => {
+    const { buttonsStyle, buttonText } = styles;
+
+    let activeButton = props === 'ACTIVE' ? { backgroundColor: colors2['mainGreen']} : null;
 
     return (
-        <View style={topButtons}>
-            <TouchableOpacity style={[buttonsStyle, { backgroundColor: 'rgb(32, 177, 151)'} ]}>
-                <Text style={styles.buttonText}>ACTIVE</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={buttonsStyle} >
-                <Text style={buttonText}>DISMISSED</Text>
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={[buttonsStyle, activeButton ]} >
+            <Text style={buttonText}>{props}</Text>
+        </TouchableOpacity>
     );
 };

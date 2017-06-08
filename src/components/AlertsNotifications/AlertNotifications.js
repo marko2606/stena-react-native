@@ -3,14 +3,12 @@ import { View, Picker } from 'react-native';
 
 import { Gradient } from '../../shared/';
 import { TopButtons } from './TopButtons';
-import List from './ListAlertsAndNotifications';
+import ListAlertsAndNotifications from './ListAlertsAndNotifications';
 import { FooterAlertsNotifications } from './FooterAlertsNotifications'
 
 import { styles } from './style';
 
-
 export default class AlertNotifications extends React.Component {
-
     constructor(){
         super();
         this.state = {
@@ -19,13 +17,15 @@ export default class AlertNotifications extends React.Component {
     }
 
     render() {
-        const { container, pickerContainer, pickerStyle } = styles;
+        const { container, pickerContainer, pickerStyle, topButtons } = styles;
         return (
             <Gradient>
                 <View style={container}>
 
-                    {/* --- Top buttons --- */}
-                    <TopButtons/>
+                    <View style={topButtons}>
+                        <TopButtons props="ACTIVE"/>
+                        <TopButtons props="DISMISS"/>
+                    </View>
 
                     {/* --- Filter bar --- */}
                     <View style={pickerContainer}>
@@ -45,12 +45,10 @@ export default class AlertNotifications extends React.Component {
                         </Picker>
                     </View>
 
-                    {/* --- Alerts and Notifications list --- */}
-                    <List />
+                    <ListAlertsAndNotifications />
 
                 </View>
 
-                {/* --- Footer --- */}
                 <FooterAlertsNotifications />
 
             </Gradient>

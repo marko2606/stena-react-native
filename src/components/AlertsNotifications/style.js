@@ -14,8 +14,6 @@ export const styles = {
         color: colors2['gray']
     },
 
-
-
     /* --- Footer --- */
     footerContainer: {
         justifyContent: 'center',
@@ -24,8 +22,6 @@ export const styles = {
     footerIconContainer: {
         flexDirection: 'row'
     },
-
-
 
     /* --- ListAlertsAndNotifications --- */
     listContainer: {
@@ -44,11 +40,22 @@ export const styles = {
         paddingTop: 12,
         paddingBottom: 12,
         borderWidth: 1,
-        borderColor: colors2['borderColorFlatListItem']
+        borderColor: colors2['mainGreenOpacity']
     },
     touchableAlert: {
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    touchableContent: {
+        flexDirection: 'column',
+        marginLeft: -30
+    },
+    detailContent: {
+        color: colors2['gray'],
+        fontSize: 10
+    },
+    titleContent: {
+        color: colors2['white']
     },
     vesselInformationText : {
         color: colors2['white'],
@@ -68,8 +75,6 @@ export const styles = {
         marginLeft: -40,
         paddingRight: 10
     },
-
-
 
     /* --- Top buttons ---- */
     topButtons: {
