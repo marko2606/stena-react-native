@@ -1,19 +1,21 @@
 import React from 'react';
 import { View } from 'react-native';
-import LogIn from './src/components/LogIn/LogIn'
+
+import LogIn from './src/components/LogIn/LogIn';
+import AlertNotifications from './src/components/AlertsNotifications/AlertNotifications';
+
+import { styles } from './src/GlobalStyle';
+
+/* TODO router */
 
 export default class App extends React.Component {
     render() {
+        const { globalContainer } = styles;
         return (
-            <View style={styles.container}>
+            <View style={globalContainer}>
                 <LogIn/>
             </View>
         );
     }
-}
-
-const styles = {
-    container: {
-        flex: 1
-    },
 };
+
