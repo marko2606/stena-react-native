@@ -1,8 +1,13 @@
+import { Platform, NativeModules } from 'react-native';
+const { StatusBarManager } = NativeModules;
 import {colors2} from '../../Colors';
+
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 
 export const styles = {
     container: {
-        flex: 1
+        flex: 1,
+        paddingTop: STATUSBAR_HEIGHT
     },
     pickerContainer: {
         marginLeft: '5%',
