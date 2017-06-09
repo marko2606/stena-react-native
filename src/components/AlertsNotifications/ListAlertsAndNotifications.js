@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements'
 
 import { data } from '../../utils/AlertsDataHelper';
 
-import { styles } from './style';
+import { styles } from './AlertsNotificationStyle';
 import { colors2 } from '../../Colors';
 
 export default class ListAlertsAndNotifications extends React.Component {

@@ -2,6 +2,7 @@ export const menu = [
     {
         title: 'Alerts & Notifications',
         icon: 'alarm',
+        route: '',
         counter: 25
     },
     {

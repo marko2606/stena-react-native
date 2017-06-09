@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements'
 import { Footer } from '../../shared/';
 
 import {colors2} from '../../Colors';
-import { styles } from './style';
+import { styles } from './AlertsNotificationStyle';
 
 
 export const FooterAlertsNotifications = () => {

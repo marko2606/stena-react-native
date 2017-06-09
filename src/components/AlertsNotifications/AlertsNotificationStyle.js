@@ -52,8 +52,6 @@ export const styles = {
         backgroundColor: colors2['primaryColor'],
         marginTop: 10,
         marginBottom: 10,
-        marginLeft: 15,
-        marginRight: 15,
         paddingTop: 12,
         paddingBottom: 12,
         borderWidth: 1,
@@ -74,7 +72,7 @@ export const styles = {
     titleContent: {
         color: colors2['white']
     },
-    vesselInformationText : {
+    vesselInformationText: {
         color: colors2['white'],
         marginTop: 10,
         marginLeft: 10,
@@ -96,12 +94,11 @@ export const styles = {
     /* --- Top buttons ---- */
     topButtons: {
         flexDirection: 'row',
-        justifyContent: 'center',
         paddingTop: 10
     },
     buttonsStyle: {
         height: 40,
-        width: '45%',
+        width: '50%',
         borderWidth: 1,
         borderColor: colors2['mainGreen'],
         justifyContent: 'center',
@@ -110,5 +107,10 @@ export const styles = {
     buttonText: {
         color: colors2['white'],
         backgroundColor: 'transparent'
+    },
+    linearGradient: {
+        flex: 1,
+        paddingLeft: 15,
+        paddingRight: 15
     }
 };

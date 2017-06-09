@@ -6,8 +6,9 @@ import { TopButtons } from './TopButtons';
 import ListAlertsAndNotifications from './ListAlertsAndNotifications';
 import { FooterAlertsNotifications } from './FooterAlertsNotifications'
 
-import { styles } from './style';
 import { colors2 } from '../../Colors';
+import { styles } from './AlertsNotificationStyle';
+import { colors } from '../../Colors';
 
 export default class AlertNotifications extends React.Component {
     constructor(){
