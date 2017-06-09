@@ -5,7 +5,7 @@ import { styles } from './LogInStyle';
 
 const Header = (props) => {
     return (
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View style={styles.headerContainer}>
             <Icon
                 iconStyle={{
                     marginTop: 50

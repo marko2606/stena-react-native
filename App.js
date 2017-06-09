@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import { View } from 'react-native';
 import LogIn from './src/components/LogIn/LogIn'
 
 export default class App extends React.Component {
@@ -12,8 +12,8 @@ export default class App extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
+const styles = {
     container: {
         flex: 1
     },
-});
+};
