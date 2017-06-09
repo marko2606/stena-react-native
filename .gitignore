@@ -5,3 +5,6 @@ npm-debug.*
 react-native-packager-cache-*
 haste-map-react-native-packager-*
 55e96e5581a2*
+.flowconfig
+.babelrc
+.watchmanconfig
