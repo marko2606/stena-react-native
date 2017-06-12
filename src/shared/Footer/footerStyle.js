@@ -11,12 +11,15 @@ export const styles = {
         left: 0,
         right: 0,
         bottom: 0,
-        top: HEIGHT_DEVICE - 65,
-        alignItems: 'center'
+        height: HEIGHT_DEVICE / 15,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
-    footerBorderTop: {
-        borderTopWidth: 2,
-        borderTopColor: colors2['mainGreen'],
-        width: '85%'
+    footerBorderTopGradient: {
+        position: 'absolute',
+        left: 10,
+        right: 10,
+        top: 0,
+        height: 1
     }
 };

@@ -1,10 +1,22 @@
 import React from 'react';
-import { View } from 'react-native';
 import { DashboardProfile } from './DashboardProfile';
 import { DashboardList } from './DashboardList';
 
-export const Dashboard = () =>
-    <View>
-        <DashboardProfile/>
-        <DashboardList/>
-    </View>;
+import { Gradient } from '../../shared/';
+import { styles } from './DashboardStyle';
+import { colors2 } from '../../Colors';
+
+export const Dashboard = () => {
+    const { linearGradient } = styles;
+     return (
+         <Gradient
+             colors={[colors2['primaryColor2'], colors2['primaryColor']]}
+             style={linearGradient}
+             start={{x: 0.0, y: 0.25}}
+             end={{x: 0.5, y: 1.0}}
+         >
+             <DashboardProfile/>
+             <DashboardList/>
+         </Gradient>
+     )
+};
