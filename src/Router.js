@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet} from 'react-native';
-import {Router, Scene, ActionConst} from 'react-native-router-flux';
+import {Platform, NativeModules} from 'react-native';
+import {Router, Scene, ActionConst, Actions} from 'react-native-router-flux';
 
 import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
+
+import {colors} from './Colors';
+
+const {StatusBarManager} = NativeModules;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 
 class RouterComponent extends Component {
     render() {
@@ -19,20 +24,33 @@ class RouterComponent extends Component {
                     />
                 </Scene>
                 <Scene key="main"
+                       style={{paddingTop: STATUSBAR_HEIGHT}}
                        type={ActionConst.RESET}>
                     <Scene
                         key="dashboard"
-                        sceneStyle={{paddingTop: Platform.OS === 'android' ? 44 : 64}}
-                        tabs={true} tabBarStyle={style.tabBarStyle}
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
                         component={Dashboard}
-                        title="OPERATIONAL PLATFORM DASHBOARD"
+                        navigationBarStyle={styles.navigationBar}
+                        titleStyle={styles.navigationBarTitle}
+                        title="DASHBOARD"
+                        hideBackImage={true}
                         initial
                     />
                     <Scene
                         key="alerts"
-                        sceneStyle={{paddingTop: Platform.OS === 'android' ? 44 : 64}}
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
                         component={AlertsNotification}
-                        title="ALERTS & NOTIFICATION"
+                        navigationBarStyle={styles.navigationBar}
+                        titleStyle={styles.navigationBarTitle}
+                        backButtonImage={require('./assets/images/dashboard.png')}
+                        backButtonIconStyle={{ width: 20, height: 20 }}
+                        onBack={() => {  Actions.dashboard() }}
+                        onRight={() => {
+                            console.log('this is on right evt');
+                        }}
+                        rightButtonImage={require('./assets/images/search.png')}
+                        rightButtonIconStyle={{ width: 20, height: 20 }}
+                        title="ALERTS & NOTIFICATIONS"
                     />
                 </Scene>
             </Router>
@@ -40,13 +58,14 @@ class RouterComponent extends Component {
     }
 }
 
-let style = StyleSheet.create({
-    tabBarStyle: {
-        borderTopWidth : .5,
-        borderColor    : '#b7b7b7',
-        backgroundColor: 'black',
-        opacity        : 1
+const styles = {
+    navigationBar: {
+        backgroundColor: colors['gradientPrimaryColor2']
+    },
+    navigationBarTitle: {
+        color: colors['whiteColor'],
+        fontWeight: 'normal'
     }
-});
+};
 
 export default RouterComponent;

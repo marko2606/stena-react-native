@@ -6,7 +6,7 @@ import { Gradient } from '../../shared/';
 import { styles } from './DashboardStyle';
 import { colors2 } from '../../Colors';
 
-export const Dashboard = () => {
+const Dashboard = () => {
     const { linearGradient } = styles;
      return (
          <Gradient
@@ -20,3 +20,5 @@ export const Dashboard = () => {
          </Gradient>
      )
 };
+
+export default Dashboard;

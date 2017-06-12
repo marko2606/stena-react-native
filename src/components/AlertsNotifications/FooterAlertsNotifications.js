@@ -1,35 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Icon } from 'react-native-elements'
+import { Font } from 'expo';
+import { createIconSetFromIcoMoon } from '@expo/vector-icons';
+import icoMoonConfig from '../../utils/config.json';
 
 import { Footer } from '../../shared/';
 
 import {colors2} from '../../Colors';
 import { styles } from './AlertsNotificationStyle';
 
+const Icon = createIconSetFromIcoMoon(icoMoonConfig, "icomoon");
 
-export const FooterAlertsNotifications = () => {
-    const { footerContainer, footerIconContainer } = styles;
-    return (
-        <Footer>
+class FooterAlertsNotifications extends Component {
+    constructor() {
+        super();
+        this.state = {
+            fontLoaded: false
+        }
+    }
+    async componentDidMount() {
+        await Font.loadAsync({
+            'icomoon': require('../../assets/fonts/icomoon.ttf')
+        });
 
-            <View style={footerContainer}>
+        this.setState({fontLoaded: true});
+    }
 
-                <View style={footerIconContainer}>
-                    <Icon
-                        name='warning'
-                        color={colors2['redWarning']}
-                        iconStyle={{ marginRight: '33%' }}
-                    />
+    render() {
+        const {footerContainer, footerIconContainer} = styles;
 
-                    <Icon
-                        name='notifications-active'
-                        color={colors2['white']}
-                        iconStyle={{ marginLeft: '33%' }}
-                    />
+        if (!this.state.fontLoaded) { return null;}
+
+        return (
+            <Footer>
+                <View style={footerContainer}>
+                    <View style={footerIconContainer}>
+                         <Icon name='warning' size={45} />
+                         <Icon name='notifications_active' size={45}/>
+                    </View>
                 </View>
-            </View>
+            </Footer>
+        )
+    }
+}
 
-        </Footer>
-    );
-};
+export default FooterAlertsNotifications;

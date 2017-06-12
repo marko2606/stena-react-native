@@ -25,7 +25,9 @@ export const styles = {
         marginLeft: '5%',
         marginRight: '5%',
         marginTop: 20,
-        backgroundColor: colors2['footerBackgroundColor']
+        backgroundColor: colors2['footerBackgroundColor'],
+        borderWidth: 1,
+        borderColor: colors2['mainGreenOpacity']
     },
     pickerStyle: {
         color: colors2['gray']
@@ -54,6 +56,8 @@ export const styles = {
         marginBottom: 10,
         paddingTop: 12,
         paddingBottom: 12,
+        paddingLeft: 12,
+        paddingRight: 12,
         borderWidth: 1,
         borderColor: colors2['mainGreenOpacity']
     },

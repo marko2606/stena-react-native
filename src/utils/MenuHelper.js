@@ -1,40 +1,40 @@
 export const menu = [
     {
         title: 'Alerts & Notifications',
-        icon: 'alarm',
+        icon: 'notifications_none',
         route: '',
         counter: 25
     },
     {
         title: 'Vessel Management',
-        icon: 'alarm'
+        icon: 'notifications_none'
     },
     {
         title: 'Global Map',
-        icon: 'alarm'
+        icon: 'notifications_none'
     },
     {
         title: 'Position List',
-        icon: 'alarm'
+        icon: 'notifications_none'
     },
     {
         title: 'Voyage Estimator',
-        icon: 'alarm'
+        icon: 'notifications_none'
     },
     {
         title: 'Energy Management',
-        icon: 'alarm'
+        icon: 'notifications_none'
     },
     {
         title: 'Daily Reports',
-        icon: 'alarm'
+        icon: 'notifications_none'
     },
     {
         title: 'Bunker Pricing',
-        icon: 'alarm'
+        icon: 'notifications_none'
     },
     {
         title: 'SOP Settings',
-        icon: 'alarm'
+        icon: 'notifications_none'
     }
 ];

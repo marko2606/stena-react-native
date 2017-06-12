@@ -33,7 +33,7 @@ export class DashboardElement extends Component {
 
     async componentDidMount() {
         await Font.loadAsync({
-            'icomoon': require('../../assets/fonts/Icomoon.ttf')
+            'icomoon': require('../../assets/fonts/icomoon.ttf')
         });
 
         this.setState({fontLoaded: true});
@@ -77,7 +77,7 @@ export class DashboardElement extends Component {
                                 onShowUnderlay={this._onPress.bind(this)}
                                 onHideUnderlay={this._onPressOut.bind(this)}>
                 <View style={{...dashboardElementContainer, height: boxHeight, width: boxWidth}}>
-                    <Icon name={this.props.icon} size={50} style={dashboardElementIcon}/>
+                    <Icon name={this.props.icon} size={45} style={dashboardElementIcon}/>
                     <Text
                         style={{...dashboardElementTitle, ...this.state.dashboardElementTitleColor}}>{this.props.title.toUpperCase()}</Text>
                     {this._renderCounter()}

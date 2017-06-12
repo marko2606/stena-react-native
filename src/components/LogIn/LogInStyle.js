@@ -1,3 +1,5 @@
+import {colors2} from '../../Colors';
+
 export const styles = {
     container: {
         width: '100%',
@@ -99,5 +101,9 @@ export const styles = {
         position: 'absolute',
         height: '100%',
         width: '100%'
+    },
+    loginIcon: {
+        color: colors2['redWarning'],
+        paddingBottom: 15
     }
 };

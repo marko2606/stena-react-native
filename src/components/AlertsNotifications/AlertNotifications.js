@@ -4,7 +4,8 @@ import { View, Picker } from 'react-native';
 import { Gradient } from '../../shared/';
 import { TopButtons } from './TopButtons';
 import ListAlertsAndNotifications from './ListAlertsAndNotifications';
-import { FooterAlertsNotifications } from './FooterAlertsNotifications'
+import FooterAlertsNotifications from './FooterAlertsNotifications'
+import AlertsNotificationsPicker from './AlertsNotificationsPicker';
 
 import { colors2 } from '../../Colors';
 import { styles } from './AlertsNotificationStyle';
@@ -19,7 +20,7 @@ export default class AlertNotifications extends React.Component {
     }
 
     render() {
-        const { container, pickerContainer, pickerStyle, topButtons, linearGradient } = styles;
+        const { container, topButtons, linearGradient } = styles;
         return (
             <Gradient
                 colors={[colors2['primaryColor2'], colors2['primaryColor']]}
@@ -28,36 +29,18 @@ export default class AlertNotifications extends React.Component {
                 end={{x: 0.5, y: 1.0}}
             >
                 <View style={container}>
-
                     <View style={topButtons}>
                         <TopButtons props="ACTIVE"/>
                         <TopButtons props="DISMISS"/>
                     </View>
 
-                    {/* --- Filter bar --- */}
-                    <View style={pickerContainer}>
-                        <Picker
+                    <AlertsNotificationsPicker
                             selectedValue={this.state.selectedFilterAlerts}
                             onValueChange={(filter) => this.setState({ selectedFilterAlerts: filter })}
-                            style={pickerStyle}
-                        >
-                            <Picker.Item label="Filter Alerts by group..." value="initial" />
-                            <Picker.Item label="ALL VESSELS" value="allVessels" />
-                            <Picker.Item label="MY FLEET" value="myFleet" />
-                            <Picker.Item label="SUEZMAX" value="suezmax" />
-                            <Picker.Item label="STENA BULK" value="stenaBulk" />
-                            <Picker.Item label="STENA WECO" value="stenaWeco" />
-                            <Picker.Item label="GOLDEN STENA WECO" value="goldenStenaWeco" />
-                            <Picker.Item label="STENA LNG" value="stenaLng" />
-                        </Picker>
-                    </View>
-
+                            style={styles}/>
                     <ListAlertsAndNotifications />
-
                 </View>
-
                 <FooterAlertsNotifications />
-
             </Gradient>
         );
     }
