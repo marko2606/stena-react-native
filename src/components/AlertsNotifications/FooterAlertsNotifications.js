@@ -19,13 +19,13 @@ export const FooterAlertsNotifications = () => {
                     <Icon
                         name='warning'
                         color={colors2['redWarning']}
-                        iconStyle={{ marginTop: 6, marginRight: '35%' }}
+                        iconStyle={{ marginRight: '33%' }}
                     />
 
                     <Icon
                         name='notifications-active'
                         color={colors2['white']}
-                        iconStyle={{ marginTop: 6, marginLeft: '35%' }}
+                        iconStyle={{ marginLeft: '33%' }}
                     />
                 </View>
             </View>

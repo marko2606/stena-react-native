@@ -7,6 +7,7 @@ import ListAlertsAndNotifications from './ListAlertsAndNotifications';
 import { FooterAlertsNotifications } from './FooterAlertsNotifications'
 
 import { styles } from './style';
+import { colors2 } from '../../Colors';
 
 export default class AlertNotifications extends React.Component {
     constructor(){
@@ -17,9 +18,14 @@ export default class AlertNotifications extends React.Component {
     }
 
     render() {
-        const { container, pickerContainer, pickerStyle, topButtons } = styles;
+        const { container, pickerContainer, pickerStyle, topButtons, linearGradient } = styles;
         return (
-            <Gradient>
+            <Gradient
+                colors={[colors2['primaryColor2'], colors2['primaryColor']]}
+                style={linearGradient}
+                start={{x: 0.0, y: 0.25}}
+                end={{x: 0.5, y: 1.0}}
+            >
                 <View style={container}>
 
                     <View style={topButtons}>

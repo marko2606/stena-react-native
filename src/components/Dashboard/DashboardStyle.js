@@ -1,3 +1,6 @@
+import { Dimensions } from 'react-native';
+const SCREEN_HEIGHT = Dimensions.get('window').height;
+
 import {colors} from '../../Colors';
 
 export const styles = {
@@ -42,5 +45,12 @@ export const styles = {
         marginTop: 15,
         marginBottom: 10,
         width: 110
+    },
+    linearGradient: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: SCREEN_HEIGHT
     }
 };

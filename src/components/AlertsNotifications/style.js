@@ -1,14 +1,26 @@
-import { Platform, NativeModules } from 'react-native';
+import { Platform, NativeModules, Dimensions } from 'react-native';
 const { StatusBarManager } = NativeModules;
 import {colors2} from '../../Colors';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
+const HEIGHT_DEVICE = Dimensions.get('window').height;
 
 export const styles = {
     container: {
         flex: 1,
         paddingTop: STATUSBAR_HEIGHT
     },
+
+    /* Liner Gradient */
+    linearGradient: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: SCREEN_HEIGHT
+    },
+
     pickerContainer: {
         marginLeft: '5%',
         marginRight: '5%',
@@ -32,7 +44,7 @@ export const styles = {
     listContainer: {
         marginLeft: 5,
         marginRight: 5,
-        marginBottom: 65,
+        marginBottom: HEIGHT_DEVICE / 15,
         marginTop: 5,
         flex: 1
     },
