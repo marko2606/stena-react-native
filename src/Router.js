@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import {Platform, NativeModules} from 'react-native';
-import {Router, Scene, ActionConst, Actions} from 'react-native-router-flux';
+import {Router, Scene, ActionConst} from 'react-native-router-flux';
 
 import CustomNavBar from './shared/CustomNavBar/CustomNavBar';
 
 import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
-
-import {colors} from './Colors';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;

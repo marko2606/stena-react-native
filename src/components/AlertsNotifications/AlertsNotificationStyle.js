@@ -1,6 +1,6 @@
 import { Platform, NativeModules, Dimensions } from 'react-native';
 const { StatusBarManager } = NativeModules;
-import {colors2} from '../../Colors';
+import {colors} from '../../Colors';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 const HEIGHT_DEVICE = Dimensions.get('window').height;
@@ -13,12 +13,12 @@ export const styles = {
 
     pickerContainer: {
         marginTop: 20,
-        backgroundColor: colors2['footerBackgroundColor'],
+        backgroundColor: colors['primaryColor2'],
         borderWidth: 1,
-        borderColor: colors2['mainGreenOpacity']
+        borderColor: colors['primaryColor1Opacity']
     },
     pickerStyle: {
-        color: colors2['gray']
+        color: colors['grayColor']
     },
 
     /* --- Footer --- */
@@ -34,18 +34,18 @@ export const styles = {
     footerIconTitle: {
         fontSize: 10,
         textAlign: 'center',
-        color: colors2['white']
+        color: colors['whiteColor']
     },
     footerIconTitleWarning: {
-        color: colors2['redWarning']
+        color: colors['warningColor']
     },
     footerIcon: {
         alignSelf: 'center',
-        color: colors2['white']
+        color: colors['whiteColor']
     },
     footerIconWarning: {
         alignSelf: 'center',
-        color: colors2['redWarning']
+        color: colors['warningColor']
     },
     /* --- ListAlertsAndNotifications --- */
     listContainer: {
@@ -54,14 +54,14 @@ export const styles = {
         flex: 1
     },
     touchableContainer: {
-        backgroundColor: colors2['primaryColor'],
+        backgroundColor: colors['primaryColor2'],
         marginTop: 10,
         paddingTop: 12,
         paddingBottom: 12,
         paddingLeft: 12,
         paddingRight: 12,
         borderWidth: 1,
-        borderColor: colors2['mainGreenOpacity']
+        borderColor: colors['primaryColor1Opacity']
     },
     touchableAlert: {
         flexDirection: 'row',
@@ -71,14 +71,14 @@ export const styles = {
         flexDirection: 'column'
     },
     detailContent: {
-        color: colors2['gray'],
+        color: colors['grayColor'],
         fontSize: 10
     },
     titleContent: {
-        color: colors2['white']
+        color: colors['whiteColor']
     },
     vesselInformationText: {
-        color: colors2['white'],
+        color: colors['whiteColor'],
         marginTop: 10,
         marginBottom: 10
     },
@@ -90,7 +90,7 @@ export const styles = {
     },
     iconsText: {
         fontSize: 10,
-        color: colors2['white'],
+        color: colors['whiteColor'],
         marginLeft: -40,
         paddingRight: 10
     },
@@ -104,12 +104,12 @@ export const styles = {
         height: 40,
         width: '50%',
         borderWidth: 1,
-        borderColor: colors2['mainGreen'],
+        borderColor: colors['primaryColor1'],
         justifyContent: 'center',
         alignItems: 'center',
     },
     buttonText: {
-        color: colors2['white'],
+        color: colors['whiteColor'],
         backgroundColor: 'transparent'
     },
     linearGradient: {

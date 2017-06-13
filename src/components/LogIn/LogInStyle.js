@@ -1,4 +1,4 @@
-import {colors2} from '../../Colors';
+import {colors} from '../../Colors';
 
 export const styles = {
     container: {
@@ -103,7 +103,7 @@ export const styles = {
         width: '100%'
     },
     loginIcon: {
-        color: colors2['redWarning'],
+        color: colors['warningColor'],
         paddingBottom: 15
     }
 };

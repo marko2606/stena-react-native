@@ -5,7 +5,7 @@ import {createIconSetFromIcoMoon} from '@expo/vector-icons';
 
 import AlertsNotificationsMoreInfo from './AlertsNotificationsMoreInfo';
 import icoMoonConfig from '../../utils/config.json';
-import {colors2} from '../../Colors';
+import {colors} from '../../Colors';
 
 const Icon = createIconSetFromIcoMoon(icoMoonConfig, "icomoon");
 
@@ -44,7 +44,7 @@ class AlertsNotificationListItem extends Component {
                     }}
                 >
                     <View style={touchableAlert}>
-                        <Icon name='warning' color={colors2['redWarning']} size={30}/>
+                        <Icon name='warning' color={colors['warningColor']} size={30}/>
                         <View style={touchableContent}>
                             <Text style={titleContent}>
                                 {this.props.item.name}
@@ -53,9 +53,9 @@ class AlertsNotificationListItem extends Component {
                         </View>
                         {
                             this.props.item.activeClick ?
-                                <Icon name="keyboard_arrow_up" size={25} color={colors2['gray']}/>
+                                <Icon name="keyboard_arrow_up" size={25} color={colors['grayColor']}/>
                                 :
-                                <Icon name="keyboard_arrow_down" size={25} color={colors2['gray']}/>
+                                <Icon name="keyboard_arrow_down" size={25} color={colors['grayColor']}/>
                         }
                     </View>
                 </TouchableWithoutFeedback>

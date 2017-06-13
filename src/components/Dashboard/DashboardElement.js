@@ -42,7 +42,7 @@ export class DashboardElement extends Component {
     _onPress() {
         this.setState({
             dashboardElementTitleColor: {
-                color: colors['primaryColor']
+                color: colors['primaryColor1']
             }
         });
     }

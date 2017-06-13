@@ -4,7 +4,7 @@ import { Font } from 'expo';
 import { createIconSetFromIcoMoon } from '@expo/vector-icons';
 
 import icoMoonConfig from '../../utils/config.json';
-import { colors2 } from '../../Colors';
+import { colors } from '../../Colors';
 
 const Icon = createIconSetFromIcoMoon(icoMoonConfig, "icomoon");
 
@@ -39,21 +39,21 @@ class AlertsNotificationsMoreInfo extends Component {
                     <Icon
                         name='close'
                         size={25}
-                        color={colors2['mainGreen']}
+                        color={colors['primaryColor1']}
                     />
                     <Text style={iconsText}>DISMISS</Text>
 
                     <Icon
                         name='my_location'
                         size={25}
-                        color={colors2['mainGreen']}
+                        color={colors['primaryColor1']}
                     />
                     <Text style={iconsText}>LOCATE</Text>
 
                     <Icon
                         name='equalizer'
                         size={25}
-                        color={colors2['mainGreen']}
+                        color={colors['primaryColor1']}
                     />
                     <Text style={iconsText}>DETAILS</Text>
                 </View>

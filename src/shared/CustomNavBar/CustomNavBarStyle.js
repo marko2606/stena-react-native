@@ -11,7 +11,7 @@ export const styles = {
         flex: 1,
         alignItems: 'center',
         borderBottomWidth: 1,
-        borderColor: colors['primaryColor'],
+        borderColor: colors['primaryColor1Opacity'],
         flexDirection: 'row'
     },
     navbarTitle: {

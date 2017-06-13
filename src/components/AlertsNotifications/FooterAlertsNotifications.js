@@ -5,8 +5,6 @@ import {createIconSetFromIcoMoon} from '@expo/vector-icons';
 import icoMoonConfig from '../../utils/config.json';
 
 import {Footer} from '../../shared/';
-
-import {colors2} from '../../Colors';
 import {styles} from './AlertsNotificationStyle';
 
 const Icon = createIconSetFromIcoMoon(icoMoonConfig, "icomoon");

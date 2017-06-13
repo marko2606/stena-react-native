@@ -1,6 +1,3 @@
-import { Dimensions } from 'react-native';
-const SCREEN_HEIGHT = Dimensions.get('window').height;
-
 import {colors} from '../../Colors';
 
 export const styles = {
@@ -15,7 +12,7 @@ export const styles = {
         textAlign: 'center'
     },
     dashboardElementIcon: {
-        color: colors['primaryColor']
+        color: colors['primaryColor1']
     },
     dashboardListContainer: {
         justifyContent: 'space-around',
