@@ -40,7 +40,6 @@ class RouterComponent extends Component {
                         key="alerts"
                         sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
                         component={AlertsNotification}
-                        navigationBarStyle={styles.navigationBar}
                         navBar={CustomNavBar}
                         icons={true}
                         leftIcon="dashboard"
@@ -52,15 +51,5 @@ class RouterComponent extends Component {
         );
     }
 }
-
-const styles = {
-    navigationBar: {
-        backgroundColor: colors['gradientPrimaryColor2']
-    },
-    navigationBarTitle: {
-        color: colors['whiteColor'],
-        fontWeight: 'normal'
-    }
-};
 
 export default RouterComponent;
