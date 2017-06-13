@@ -2,7 +2,7 @@ import {colors} from '../../Colors';
 
 export const styles = {
     container: {
-        backgroundColor: colors['primaryColor'],
+        backgroundColor: colors['primaryColor1'],
         position: 'absolute',
         right: 40,
         paddingTop: 2.5,

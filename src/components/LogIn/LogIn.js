@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Image, Keyboard, LayoutAnimation, Platform, UIManager, Dimensions } from 'react-native';
-import { Components } from 'expo';
-const { LinearGradient } = Components;
 
+import { Gradient } from '../../shared/';
 import Input from './Input';
 import Footer from './Footer';
 import LoginBtn from './LoginBtn';
 import Header from './Header';
 import { styles } from './LogInStyle';
+import { colors } from '../../Colors';
 
 export default class LogIn extends React.Component {
 
@@ -54,10 +54,11 @@ export default class LogIn extends React.Component {
 
     render() {
         return (
-            <LinearGradient
-                colors={['#1D7B77', '#154253', '#0D2832']}
+            <Gradient
+                colors={[colors['gradientPrimaryColor1'], colors['gradientPrimaryColor2'], colors['gradientPrimaryColor3']]}
                 style={styles.gradient}
-                start={[-.7, 0.4]}
+                start={{x: 0.0, y: 0.25}}
+                end={{x: 0.5, y: 1.0}}
             >
                 <View style={styles.container}>
                     <Header SOPFontSize={this.state.SOPFontSize}/>
@@ -77,9 +78,7 @@ export default class LogIn extends React.Component {
                     <LoginBtn/>
                     <Footer/>
                 </View>
-            </LinearGradient>
+            </Gradient>
         )
     }
 }
-
-

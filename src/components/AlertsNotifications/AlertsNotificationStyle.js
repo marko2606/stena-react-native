@@ -1,9 +1,8 @@
 import { Platform, NativeModules, Dimensions } from 'react-native';
 const { StatusBarManager } = NativeModules;
-import {colors2} from '../../Colors';
+import {colors} from '../../Colors';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 const HEIGHT_DEVICE = Dimensions.get('window').height;
 
 export const styles = {
@@ -12,72 +11,75 @@ export const styles = {
         paddingTop: STATUSBAR_HEIGHT
     },
 
-    /* Liner Gradient */
-    linearGradient: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        height: SCREEN_HEIGHT
-    },
-
     pickerContainer: {
-        marginLeft: '5%',
-        marginRight: '5%',
         marginTop: 20,
-        backgroundColor: colors2['footerBackgroundColor']
+        backgroundColor: colors['primaryColor2'],
+        borderWidth: 1,
+        borderColor: colors['primaryColor1Opacity']
     },
     pickerStyle: {
-        color: colors2['gray']
+        color: colors['grayColor']
     },
 
     /* --- Footer --- */
     footerContainer: {
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'center'
     },
     footerIconContainer: {
         flexDirection: 'row'
     },
-
+    footerIconWrapper: {
+        width: '50%'
+    },
+    footerIconTitle: {
+        fontSize: 10,
+        textAlign: 'center',
+        color: colors['whiteColor']
+    },
+    footerIconTitleWarning: {
+        color: colors['warningColor']
+    },
+    footerIcon: {
+        alignSelf: 'center',
+        color: colors['whiteColor']
+    },
+    footerIconWarning: {
+        alignSelf: 'center',
+        color: colors['warningColor']
+    },
     /* --- ListAlertsAndNotifications --- */
     listContainer: {
-        marginLeft: 5,
-        marginRight: 5,
         marginBottom: HEIGHT_DEVICE / 15,
         marginTop: 5,
         flex: 1
     },
     touchableContainer: {
-        backgroundColor: colors2['primaryColor'],
+        backgroundColor: colors['primaryColor2'],
         marginTop: 10,
-        marginBottom: 10,
-        marginLeft: 15,
-        marginRight: 15,
         paddingTop: 12,
         paddingBottom: 12,
+        paddingLeft: 12,
+        paddingRight: 12,
         borderWidth: 1,
-        borderColor: colors2['mainGreenOpacity']
+        borderColor: colors['primaryColor1Opacity']
     },
     touchableAlert: {
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
     touchableContent: {
-        flexDirection: 'column',
-        marginLeft: -30
+        flexDirection: 'column'
     },
     detailContent: {
-        color: colors2['gray'],
+        color: colors['grayColor'],
         fontSize: 10
     },
     titleContent: {
-        color: colors2['white']
+        color: colors['whiteColor']
     },
-    vesselInformationText : {
-        color: colors2['white'],
+    vesselInformationText: {
+        color: colors['whiteColor'],
         marginTop: 10,
-        marginLeft: 10,
         marginBottom: 10
     },
     iconContainer: {
@@ -88,7 +90,7 @@ export const styles = {
     },
     iconsText: {
         fontSize: 10,
-        color: colors2['white'],
+        color: colors['whiteColor'],
         marginLeft: -40,
         paddingRight: 10
     },
@@ -96,19 +98,23 @@ export const styles = {
     /* --- Top buttons ---- */
     topButtons: {
         flexDirection: 'row',
-        justifyContent: 'center',
         paddingTop: 10
     },
     buttonsStyle: {
         height: 40,
-        width: '45%',
+        width: '50%',
         borderWidth: 1,
-        borderColor: colors2['mainGreen'],
+        borderColor: colors['primaryColor1'],
         justifyContent: 'center',
         alignItems: 'center',
     },
     buttonText: {
-        color: colors2['white'],
+        color: colors['whiteColor'],
         backgroundColor: 'transparent'
+    },
+    linearGradient: {
+        flex: 1,
+        paddingLeft: 15,
+        paddingRight: 15
     }
 };

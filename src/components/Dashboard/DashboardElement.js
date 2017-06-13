@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TouchableHighlight, View, Dimensions } from 'react-native';
 import { Font } from 'expo';
+import { Actions } from 'react-native-router-flux';
 import { createIconSetFromIcoMoon } from '@expo/vector-icons';
 import { Counter } from '../../shared/Counter/Counter';
 import icoMoonConfig from '../../utils/config.json';
@@ -32,7 +33,7 @@ export class DashboardElement extends Component {
 
     async componentDidMount() {
         await Font.loadAsync({
-            'icomoon': require('../../assets/fonts/Icomoon.ttf')
+            'icomoon': require('../../assets/fonts/icomoon.ttf')
         });
 
         this.setState({fontLoaded: true});
@@ -41,7 +42,7 @@ export class DashboardElement extends Component {
     _onPress() {
         this.setState({
             dashboardElementTitleColor: {
-                color: colors['primaryColor']
+                color: colors['primaryColor1']
             }
         });
     }
@@ -60,6 +61,10 @@ export class DashboardElement extends Component {
         }
     }
 
+    _changeRoute() {
+        Actions.alerts();
+    }
+
     render() {
         const {dashboardElementContainer, dashboardElementTitle, dashboardElementIcon} = styles;
 
@@ -67,12 +72,12 @@ export class DashboardElement extends Component {
 
         return (
 
-            <TouchableHighlight onPress={() => { }}
+            <TouchableHighlight onPress={this._changeRoute.bind(this)}
                                 underlayColor="transparent"
                                 onShowUnderlay={this._onPress.bind(this)}
                                 onHideUnderlay={this._onPressOut.bind(this)}>
                 <View style={{...dashboardElementContainer, height: boxHeight, width: boxWidth}}>
-                    <Icon name={this.props.icon} size={50} style={dashboardElementIcon}/>
+                    <Icon name={this.props.icon} size={45} style={dashboardElementIcon}/>
                     <Text
                         style={{...dashboardElementTitle, ...this.state.dashboardElementTitleColor}}>{this.props.title.toUpperCase()}</Text>
                     {this._renderCounter()}
