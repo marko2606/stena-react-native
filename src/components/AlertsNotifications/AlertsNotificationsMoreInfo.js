@@ -40,7 +40,6 @@ class AlertsNotificationsMoreInfo extends Component {
                         name='close'
                         size={25}
                         color={colors2['mainGreen']}
-                        iconStyle={{ marginLeft: 10 }}
                     />
                     <Text style={iconsText}>DISMISS</Text>
 

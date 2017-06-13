@@ -3,7 +3,6 @@ const { StatusBarManager } = NativeModules;
 import {colors2} from '../../Colors';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 const HEIGHT_DEVICE = Dimensions.get('window').height;
 
 export const styles = {
@@ -12,18 +11,7 @@ export const styles = {
         paddingTop: STATUSBAR_HEIGHT
     },
 
-    /* Liner Gradient */
-    linearGradient: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        height: SCREEN_HEIGHT
-    },
-
     pickerContainer: {
-        marginLeft: '5%',
-        marginRight: '5%',
         marginTop: 20,
         backgroundColor: colors2['footerBackgroundColor'],
         borderWidth: 1,
@@ -35,17 +23,32 @@ export const styles = {
 
     /* --- Footer --- */
     footerContainer: {
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'center'
     },
     footerIconContainer: {
         flexDirection: 'row'
     },
-
+    footerIconWrapper: {
+        width: '50%'
+    },
+    footerIconTitle: {
+        fontSize: 10,
+        textAlign: 'center',
+        color: colors2['white']
+    },
+    footerIconTitleWarning: {
+        color: colors2['redWarning']
+    },
+    footerIcon: {
+        alignSelf: 'center',
+        color: colors2['white']
+    },
+    footerIconWarning: {
+        alignSelf: 'center',
+        color: colors2['redWarning']
+    },
     /* --- ListAlertsAndNotifications --- */
     listContainer: {
-        marginLeft: 5,
-        marginRight: 5,
         marginBottom: HEIGHT_DEVICE / 15,
         marginTop: 5,
         flex: 1
@@ -53,7 +56,6 @@ export const styles = {
     touchableContainer: {
         backgroundColor: colors2['primaryColor'],
         marginTop: 10,
-        marginBottom: 10,
         paddingTop: 12,
         paddingBottom: 12,
         paddingLeft: 12,
@@ -66,8 +68,7 @@ export const styles = {
         justifyContent: 'space-between'
     },
     touchableContent: {
-        flexDirection: 'column',
-        marginLeft: -30
+        flexDirection: 'column'
     },
     detailContent: {
         color: colors2['gray'],
@@ -79,7 +80,6 @@ export const styles = {
     vesselInformationText: {
         color: colors2['white'],
         marginTop: 10,
-        marginLeft: 10,
         marginBottom: 10
     },
     iconContainer: {

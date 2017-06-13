@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Platform, NativeModules} from 'react-native';
 import {Router, Scene, ActionConst, Actions} from 'react-native-router-flux';
 
+import CustomNavBar from './shared/CustomNavBar/CustomNavBar';
+
 import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
@@ -30,10 +32,8 @@ class RouterComponent extends Component {
                         key="dashboard"
                         sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
                         component={Dashboard}
-                        navigationBarStyle={styles.navigationBar}
-                        titleStyle={styles.navigationBarTitle}
-                        title="DASHBOARD"
-                        hideBackImage={true}
+                        title="OPERATIONAL PLATFORM DASHBOARD"
+                        navBar={CustomNavBar}
                         initial
                     />
                     <Scene
@@ -41,15 +41,10 @@ class RouterComponent extends Component {
                         sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
                         component={AlertsNotification}
                         navigationBarStyle={styles.navigationBar}
-                        titleStyle={styles.navigationBarTitle}
-                        backButtonImage={require('./assets/images/dashboard.png')}
-                        backButtonIconStyle={{ width: 20, height: 20 }}
-                        onBack={() => {  Actions.dashboard() }}
-                        onRight={() => {
-                            console.log('this is on right evt');
-                        }}
-                        rightButtonImage={require('./assets/images/search.png')}
-                        rightButtonIconStyle={{ width: 20, height: 20 }}
+                        navBar={CustomNavBar}
+                        icons={true}
+                        leftIcon="dashboard"
+                        rightIcon="search"
                         title="ALERTS & NOTIFICATIONS"
                     />
                 </Scene>

@@ -31,7 +31,7 @@ export default class AlertNotifications extends React.Component {
                 <View style={container}>
                     <View style={topButtons}>
                         <TopButtons props="ACTIVE"/>
-                        <TopButtons props="DISMISS"/>
+                        <TopButtons props="DISMISSED"/>
                     </View>
 
                     <AlertsNotificationsPicker
