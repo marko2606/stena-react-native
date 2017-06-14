@@ -17,7 +17,7 @@ export const styles = {
         backgroundColor: colors['primaryColor2'],
         borderWidth: 1,
         borderColor: colors['primaryColor1Opacity'],
-        flexDirection: 'row'
+        flexDirection: 'column'
     },
     dropdownStyle: {
         alignItems: 'center',
@@ -40,8 +40,7 @@ export const styles = {
     textStyle: {
         color: colors['grayColor'],
         padding: 12,
-        fontSize: 13,
-        borderColor: 'red'
+        fontSize: 13
     },
     dropdownTextHighlightStyle: {
         color: colors['primaryColor1']
