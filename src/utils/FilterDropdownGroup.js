@@ -7,7 +7,7 @@ const filterGroup = [
     'GOLDEN STENA WECO',
     'STENA LNG',
     'MORE OPTIONS',
-    'MORE OPTIONS',
+    'MORE OPTIONS 2',
 ];
 
 export default filterGroup;

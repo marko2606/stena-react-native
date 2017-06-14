@@ -1,7 +1,7 @@
-import watchGetData from '../components/AlertsNotifications/alerts-saga';
+import alertsSaga from '../components/AlertsNotifications/alerts-saga';
 
 export default function* rootSaga() {
     yield [
-        watchGetData()
+        alertsSaga()
     ]
 }

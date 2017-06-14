@@ -16,7 +16,7 @@ const AlertsNotificationsPicker = (props) => {
                 dropdownTextStyle={dropdownTextStyle}
                 textStyle={textStyle}
                 dropdownTextHighlightStyle={dropdownTextHighlightStyle}
-                onSelect={ (index) => console.log(index)} // TODO
+                onSelect={ (index) => index} // TODO function onSelect
                 defaultValue="Filter Alerts by group"
                 renderSeparator={() => { return null }}
             />
