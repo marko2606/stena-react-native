@@ -1,7 +1,6 @@
 import React from 'react';
 import ModalDropdown from 'react-native-modal-dropdown';
 
-
 export const Dropdown = (props) => {
     return (
         <ModalDropdown
@@ -12,6 +11,7 @@ export const Dropdown = (props) => {
             textStyle={props.textStyle}
             defaultValue={props.defaultValue}
             dropdownTextHighlightStyle={props.dropdownTextHighlightStyle}
+            renderSeparator={props.renderSeparator}
         />
     )
 };

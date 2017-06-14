@@ -15,14 +15,14 @@ class RouterComponent extends Component {
     render() {
         return (
             <Router>
-{/*                <Scene key="auth">
+                <Scene key="auth">
                     <Scene
                         key="login"
                         component={LogIn}
-                        //initial
+                        initial
                         hideNavBar
                     />
-                </Scene>*/}
+                </Scene>
                 <Scene key="main"
                        style={{paddingTop: STATUSBAR_HEIGHT}}
                        type={ActionConst.RESET}>
@@ -32,7 +32,7 @@ class RouterComponent extends Component {
                         component={Dashboard}
                         title="OPERATIONAL PLATFORM DASHBOARD"
                         navBar={CustomNavBar}
-                        //initial
+                        initial
                     />
                     <Scene
                         key="alerts"
@@ -43,7 +43,6 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="ALERTS & NOTIFICATIONS"
-                        initial
                     />
                 </Scene>
             </Router>

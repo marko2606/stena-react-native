@@ -1,32 +1,24 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { colors } from '../../Colors';
 import { Dropdown } from '../../shared/';
-
-const filterGroup = [
-    'ALL VESSELS',
-    'MY FLEET',
-    'SUEZMAX',
-    'STENA BULK',
-    'STENA WECO',
-    'GOLDEN STENA WECO',
-    'STENA LNG',
-    'MORE OPTIONS',
-    'MORE OPTIONS',
-];
+import filterGroup from '../../utils/FilterDropdownGroup';
+import { styles } from './AlertsNotificationStyle';
 
 const AlertsNotificationsPicker = (props) => {
+    const { dropdownStyle, dropdownTextStyle, textStyle, dropdownTextHighlightStyle } = styles;
+
     return (
         <View style={props.style.pickerContainer}>
             <Dropdown
-                dropdownStyle={{ flex: 1, width: '91%', height: '60%', backgroundColor: 'transparent', borderWidth: 0 }}
                 options={filterGroup}
+                dropdownStyle={dropdownStyle}
+                dropdownTextStyle={dropdownTextStyle}
+                textStyle={textStyle}
+                dropdownTextHighlightStyle={dropdownTextHighlightStyle}
                 onSelect={ (index) => console.log(index)} // TODO
-                dropdownTextStyle={{ fontSize: 16, padding: 5, color: colors['whiteColor'], backgroundColor: colors['primaryColor2'] }}
-                textStyle={{ color: colors['grayColor'], padding: 12, fontSize: 13, borderColor: 'red' }}
                 defaultValue="Filter Alerts by group"
-                dropdownTextHighlightStyle={{ color: colors['primaryColor1'] }}
+                renderSeparator={() => { return null }}
             />
         </View>
     )

@@ -11,14 +11,40 @@ export const styles = {
         paddingTop: STATUSBAR_HEIGHT
     },
 
+    /* --- Picker - Dropdown --- */
     pickerContainer: {
         marginTop: 20,
         backgroundColor: colors['primaryColor2'],
         borderWidth: 1,
-        borderColor: colors['primaryColor1Opacity']
+        borderColor: colors['primaryColor1Opacity'],
+        flexDirection: 'row'
     },
-    pickerStyle: {
-        color: colors['grayColor']
+    dropdownStyle: {
+        alignItems: 'center',
+        width: '92%',
+        height: '60%',
+        backgroundColor: 'transparent',
+        borderWidth: 0,
+        flexDirection: 'row'
+    },
+    dropdownTextStyle: {
+        fontSize: 16,
+        padding: 5,
+        paddingLeft: 15,
+        paddingRight: 15,
+        color: colors['whiteColor'],
+        backgroundColor: colors['primaryColor2'],
+        borderBottomWidth: 0.5,
+        borderBottomColor: colors['primaryColor1Opacity']
+    },
+    textStyle: {
+        color: colors['grayColor'],
+        padding: 12,
+        fontSize: 13,
+        borderColor: 'red'
+    },
+    dropdownTextHighlightStyle: {
+        color: colors['primaryColor1']
     },
 
     /* --- Footer --- */
@@ -97,8 +123,7 @@ export const styles = {
 
     /* --- Top buttons ---- */
     topButtons: {
-        flexDirection: 'row',
-        paddingTop: 10
+        flexDirection: 'row'
     },
     buttonsStyle: {
         height: 40,
