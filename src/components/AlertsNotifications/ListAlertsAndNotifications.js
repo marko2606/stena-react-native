@@ -1,19 +1,17 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
-import { Icon } from 'react-native-elements'
+import { View, FlatList, ActivityIndicator } from 'react-native';
 
+import AlertsNotificationListItem from './AlertsNotificationListItem'
 import { data } from '../../utils/AlertsDataHelper';
 
-import { styles } from './style';
-import { colors2 } from '../../Colors';
+import { styles } from './AlertsNotificationStyle';
 
 export default class ListAlertsAndNotifications extends React.Component {
-
-    constructor(){
+    constructor() {
         super();
         this.state = {
             loading: false,
-            data: data,
+            data: data
         }
     }
 
@@ -28,83 +26,8 @@ export default class ListAlertsAndNotifications extends React.Component {
         })
     }
 
-    moreInfoAfterClick(item) {
-        const { vesselInformationText, iconContainer, iconsText } = styles;
-
-        return (
-            <View>
-                <Text style={vesselInformationText}>
-                    Vessel status is - {item.status}.
-                </Text>
-
-                <View style={iconContainer}>
-                    <Icon
-                        name='clear'
-                        color={colors2['mainGreen']}
-                        iconStyle={{ marginLeft: 10 }}
-                    />
-                    <Text style={iconsText}>DISMISS</Text>
-
-                    <Icon
-                        name='location-searching'
-                        color={colors2['mainGreen']}
-                    />
-                    <Text style={iconsText}>LOCATE</Text>
-
-                    <Icon
-                        name='line-style'
-                        color={colors2['mainGreen']}
-                    />
-                    <Text style={iconsText}>DETAILS</Text>
-                </View>
-            </View>
-        )
-    }
-
     _renderItem(item) {
-        const { touchableContainer, touchableAlert, touchableContent, detailContent, titleContent } = styles;
-
-        return (
-            <View style={touchableContainer}>
-                <TouchableOpacity
-                    style={touchableAlert}
-                    onPress={() => { return this.onClickShowMore(item) }}
-                >
-                    <Icon
-                        name='warning'
-                        color={colors2['redWarning']}
-                        iconStyle={{ marginLeft: 10 }}
-                    />
-
-                    <View style={touchableContent}>
-                        <Text style={titleContent}>
-                            {item.name}
-                        </Text>
-                        <Text style={detailContent}>SPEED OVER 15% INSTRUCTED</Text>
-                    </View>
-
-                    {
-                        item.activeClick ?
-                            <Icon
-                                name="keyboard-arrow-up"
-                                color={colors2['gray']}
-                                iconStyle={{ marginRight: 10 }}
-                            />
-                            :
-                            <Icon
-                                name="keyboard-arrow-down"
-                                color={colors2['gray']}
-                                iconStyle={{ marginRight: 10 }}
-                            />
-                    }
-                </TouchableOpacity>
-
-                {
-                    item.activeClick ? this.moreInfoAfterClick(item) : null
-                }
-
-            </View>
-        )
+        return <AlertsNotificationListItem styles={styles} item={item} onPress={this.onClickShowMore.bind(this)}/>
     }
 
     renderFooter(){
@@ -120,6 +43,7 @@ export default class ListAlertsAndNotifications extends React.Component {
     }
     render() {
         const { listContainer } = styles;
+
         return (
             <View style={listContainer}>
                 <FlatList

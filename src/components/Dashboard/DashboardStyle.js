@@ -6,13 +6,13 @@ export const styles = {
     },
     dashboardElementTitle: {
         color: colors['whiteColor'],
-        fontSize: 14,
+        fontSize: 12,
         flexGrow: 1,
         paddingTop: 10,
         textAlign: 'center'
     },
     dashboardElementIcon: {
-        color: colors['primaryColor']
+        color: colors['primaryColor1']
     },
     dashboardListContainer: {
         justifyContent: 'space-around',
@@ -25,22 +25,22 @@ export const styles = {
         alignSelf: 'center',
         borderWidth: 4,
         borderColor: colors['gradientPrimaryColor2'],
-        borderRadius: 50,
-        height: 100,
+        borderRadius: 45,
+        height: 90,
         marginTop: 5,
-        width: 100
+        width: 90
     },
     dashboardProfileUsername: {
         alignSelf: 'center',
         color: colors['whiteColor'],
-        fontSize: 22
+        fontSize: 20
     },
     dashboardProfileGradient: {
         alignSelf: 'center',
-        borderRadius: 55,
-        height: 110,
+        borderRadius: 50,
+        height: 100,
         marginTop: 15,
         marginBottom: 10,
-        width: 110
+        width: 100
     }
 };
