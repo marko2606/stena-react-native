@@ -1,16 +1,15 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './src/store';
 
 import Router from "./src/Router";
-import { styles } from './src/GlobalStyle';
 
 export default class App extends React.Component {
     render() {
-        const { globalContainer } = styles;
         return (
-            <View style={globalContainer}>
+            <Provider store={store}>
                 <Router/>
-            </View>
+            </Provider>
         );
     }
 };
