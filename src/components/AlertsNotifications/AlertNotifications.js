@@ -34,9 +34,8 @@ export default class AlertNotifications extends React.Component {
                     </View>
 
                     <AlertsNotificationsPicker
-                            selectedValue={this.state.selectedFilterAlerts}
-                            onValueChange={(filter) => this.setState({ selectedFilterAlerts: filter })}
-                            style={styles}/>
+                            style={styles}
+                    />
                     <ListAlertsAndNotifications />
                 </View>
                 <FooterAlertsNotifications />

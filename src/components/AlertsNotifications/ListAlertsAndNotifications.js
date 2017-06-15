@@ -1,23 +1,28 @@
 import React from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
+import { connect } from 'react-redux';
 
 import AlertsNotificationListItem from './AlertsNotificationListItem'
-import { data } from '../../utils/AlertsDataHelper';
 
 import { styles } from './AlertsNotificationStyle';
 
-export default class ListAlertsAndNotifications extends React.Component {
+import { getData } from '../../actions';
+
+class ListAlertsAndNotifications extends React.Component {
+    componentWillMount(){
+        this.props.getDataAll();
+    }
+
     constructor() {
         super();
         this.state = {
-            loading: false,
-            data: data
+            loading: false
         }
     }
 
     onClickShowMore(item) {
         let itemKey = item.key;
-        let items = this.state.data;
+        let items = this.props.dataStena;
 
         items[itemKey - 1].activeClick = !item.activeClick;
 
@@ -47,7 +52,7 @@ export default class ListAlertsAndNotifications extends React.Component {
         return (
             <View style={listContainer}>
                 <FlatList
-                    data={this.state.data}
+                    data={this.props.dataStena}
                     renderItem={({item}) => {
                        return this._renderItem(item)
                     }}
@@ -65,3 +70,19 @@ export default class ListAlertsAndNotifications extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        dataStena: state.alertsReducer.dataStena
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getDataAll: () => {
+            getData(dispatch)
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListAlertsAndNotifications)
