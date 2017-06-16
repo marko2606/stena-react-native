@@ -1,16 +1,19 @@
 import React from 'react';
 import { TouchableWithoutFeedback, Text, View } from 'react-native';
 
-export const FilterGroup = ({heading, renderFilterList, onPress, Icon}) => {
+import { styles } from './FiltersShipStyle';
+
+export const FilterGroup = ({ heading, renderFilterList, onPress, Icon }) => {
+    const { filterGroupContainer, filterGroupView, textHeading } = styles;
 
     return (
-        <View style={{ borderBottomWidth: 0.5, borderBottomColor: 'gray', paddingTop: 15, paddingBottom: 15 }}>
+        <View style={filterGroupContainer}>
             <TouchableWithoutFeedback
                 onPress={onPress}
             >
-                <View style={{ flexDirection: 'row' }}>
+                <View style={filterGroupView}>
                     {Icon}
-                    <Text style={{ color: 'white', fontSize: 18, paddingLeft: 5 }}>
+                    <Text style={textHeading}>
                         {heading.toUpperCase()}
                     </Text>
                 </View>
