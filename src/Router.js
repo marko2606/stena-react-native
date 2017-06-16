@@ -7,6 +7,7 @@ import CustomNavBar from './shared/CustomNavBar/CustomNavBar';
 import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
+import FiltersShip from './components/FiltersShip/FiltersShip';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
@@ -15,14 +16,14 @@ class RouterComponent extends Component {
     render() {
         return (
             <Router>
-                <Scene key="auth">
+{/*                <Scene key="auth">
                     <Scene
                         key="login"
                         component={LogIn}
                         initial
                         hideNavBar
                     />
-                </Scene>
+                </Scene>*/}
                 <Scene key="main"
                        style={{paddingTop: STATUSBAR_HEIGHT}}
                        type={ActionConst.RESET}>
@@ -32,7 +33,7 @@ class RouterComponent extends Component {
                         component={Dashboard}
                         title="OPERATIONAL PLATFORM DASHBOARD"
                         navBar={CustomNavBar}
-                        initial
+
                     />
                     <Scene
                         key="alerts"
@@ -43,6 +44,17 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="ALERTS & NOTIFICATIONS"
+                    />
+                    <Scene
+                        key="filters"
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
+                        component={FiltersShip}
+                        navBar={CustomNavBar}
+                        icons={true}
+                        leftIcon="dashboard"
+                        rightIcon="search"
+                        title="FILTERS"
+                        initial
                     />
                 </Scene>
             </Router>
