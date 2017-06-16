@@ -219,6 +219,3 @@ gradle-app.setting
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-# End of https://www.gitignore.io/api/reactnative
-src/components/GlobalMap/
-src/shared/Map/
