@@ -14,7 +14,6 @@ class GlobalMap extends React.Component {
     render() {
     console.log('is global map activated: ',this.props.globalMap.isGlobalMapActivated);
         return (
-            this.props.globalMap.isGlobalMapActivated ? <Text>Gl0bal map is already activated!</Text> :
             <View>
                 <Map/>
                 <Footer/>

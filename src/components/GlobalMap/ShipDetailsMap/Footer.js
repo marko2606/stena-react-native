@@ -18,7 +18,6 @@ class Footer extends React.Component {
 
 
     render() {
-        console.log('footer ',this.props);
         return (
             <View style={[styles.footer, {height: this.props.GlobalMapReducer.footerHeight}]}>
                 <IconFooter

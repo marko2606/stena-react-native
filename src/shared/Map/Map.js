@@ -18,8 +18,21 @@ class Map extends React.Component {
 
     displayShipDetails() {
         console.log('remote to ship details');
-        Actions.refresh({type: 'reset'})
-        Actions.shipDetailsMap();
+        Actions.shipDetailsMap({latitude: -8.059229627200192, longitude: 4.482421875});
+    }
+
+    zoomToMarker() {
+        let {latitude, longitude} = this.props;
+
+        if(latitude && longitude) {
+            return {
+                latitude,
+                longitude,
+                latitudeDelta: 0.12,
+                longitudeDelta: 0.065,}
+        } else {
+            return null;
+        }
     }
     render() {
         return (
@@ -29,6 +42,7 @@ class Map extends React.Component {
                     style={{height: '100%'}}
                     customMapStyle={mapStyle}
                     onPress={() => this.props.displayFooterSelectionDetails()}
+                    initialRegion={this.zoomToMarker()}
                 >
                     <MapView.Marker
                         coordinate={{latitude: -8.059229627200192, longitude: 4.482421875}}

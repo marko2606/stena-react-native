@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 import { Font } from 'expo';
 import { createIconSetFromIcoMoon } from '@expo/vector-icons';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
 import icoMoonConfig from '../../utils/config.json';
 import { styles } from './CustomNavBarStyle';
@@ -26,14 +26,31 @@ class CustomNavBar extends Component {
     }
 
     _renderLeftIcon() {
-        if (this.props.leftIcon && this.props.leftIcon === 'dashboard') {
-            return <Icon
-                name={this.props.leftIcon}
-                size={20}
-                style={[styles.navbarIcon, styles.indentLeft]}
-                onPress={() => Actions.dashboard()}
-            />
+        switch(this.props.leftIcon) {
+            case 'dashboard':
+                return <Icon
+                    name={this.props.leftIcon}
+                    size={20}
+                    style={[styles.navbarIcon, styles.indentLeft]}
+                    onPress={() => Actions.dashboard()}
+                />
+            case 'back':
+                return <Icon
+                    name={'keyboard_arrow_up'}
+                    size={20}
+                    style={[styles.navbarIcon, styles.indentLeft]}
+                    onPress={() => Actions.globalMap()}
+                />
+
         }
+        // if (this.props.leftIcon && this.props.leftIcon === 'dashboard') {
+        //     return <Icon
+        //         name={this.props.leftIcon}
+        //         size={20}
+        //         style={[styles.navbarIcon, styles.indentLeft]}
+        //         onPress={() => Actions.dashboard()}
+        //     />
+        // }
     }
 
     _renderRightIcon() {

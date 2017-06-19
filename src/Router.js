@@ -15,6 +15,7 @@ const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 
 class RouterComponent extends Component {
     render() {
+        // NOTE: type={ActionConst.REPLACE} needs to be added in order for maps to render properly.
         return (
             <Router>
                 <Scene key="auth">
@@ -25,6 +26,7 @@ class RouterComponent extends Component {
                         hideNavBar
                     />
                 </Scene>
+
                 <Scene key="main"
                        style={{paddingTop: STATUSBAR_HEIGHT}}
                        type={ActionConst.RESET}
@@ -36,6 +38,7 @@ class RouterComponent extends Component {
                         title="OPERATIONAL PLATFORM DASHBOARD"
                         navBar={CustomNavBar}
                         initial
+                        type={ActionConst.REPLACE}
                     />
                     <Scene
                         key="alerts"
@@ -46,6 +49,7 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="ALERTS & NOTIFICATIONS"
+                        type={ActionConst.REPLACE}
                     />
                     <Scene
                         key="globalMap"
@@ -56,6 +60,7 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="Global Map"
+                        type={ActionConst.REPLACE}
                     />
                     <Scene
                         key="shipDetailsMap"
@@ -64,8 +69,9 @@ class RouterComponent extends Component {
                         component={ShipDetailsMap}
                         icons={true}
                         rightIcon="search"
-                        leftIcon="dashboard"
+                        leftIcon="back"
                         title="Ship Details Map"
+                        type={ActionConst.REPLACE}
                     />
                 </Scene>
             </Router>

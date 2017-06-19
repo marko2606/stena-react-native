@@ -62,17 +62,23 @@ export class DashboardElement extends Component {
     }
 
     _changeRoute() {
-        Actions.globalMap();
+        switch(this.props.routeName) {
+            case 'globalMap':
+                return Actions.globalMap();
+            case 'alerts':
+                return Actions.alerts();
+            default:
+                console.log(this.props.title, 'component is not yet activated');
+                return null
+        }
     }
 
     render() {
         const {dashboardElementContainer, dashboardElementTitle, dashboardElementIcon} = styles;
-
         if (!this.state.fontLoaded) { return null;}
-
         return (
 
-            <TouchableHighlight onPress={this._changeRoute.bind(this)}
+            <TouchableHighlight onPress={() => this._changeRoute()}
                                 underlayColor="transparent"
                                 onShowUnderlay={this._onPress.bind(this)}
                                 onHideUnderlay={this._onPressOut.bind(this)}>
