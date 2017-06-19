@@ -105,7 +105,6 @@ class LogIn extends React.Component {
                         <Input
                             placeholder="Password"
                             onChange={this.handlePasswordChanged.bind(this)}
-                            value={this.state.password}
                             secureTextEntry={true}
                         />
                     </View>
