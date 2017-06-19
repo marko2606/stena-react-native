@@ -17,18 +17,16 @@ class Map extends React.Component {
     }
 
     displayShipDetails() {
-        console.log('remote to ship details');
         Actions.shipDetailsMap({latitude: -8.059229627200192, longitude: 4.482421875});
     }
 
     zoomToMarker() {
         let {latitude, longitude} = this.props;
-
         if(latitude && longitude) {
             return {
                 latitude,
                 longitude,
-                latitudeDelta: 0.12,
+                latitudeDelta: 0.12, // hardcoded for now
                 longitudeDelta: 0.065,}
         } else {
             return null;
@@ -60,14 +58,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        displayFooterSelectionDetails: () => {
-            dispatch({
-                type: 'TOGGLE_FOOTER_SELECTION_DETAILS'
-            })
-        }
-    }
-};
-
-export default connect(mapStateToProps, {displayFooterSelectionDetails})(Map);
+export default connect(mapStateToProps, null)(Map);

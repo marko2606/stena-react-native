@@ -33,24 +33,17 @@ class CustomNavBar extends Component {
                     size={20}
                     style={[styles.navbarIcon, styles.indentLeft]}
                     onPress={() => Actions.dashboard()}
-                />
+                />;
             case 'back':
                 return <Icon
-                    name={'keyboard_arrow_up'}
+                    name={'chevron-left'}
                     size={20}
                     style={[styles.navbarIcon, styles.indentLeft]}
                     onPress={() => Actions.globalMap()}
-                />
-
+                />;
+            default:
+                return null
         }
-        // if (this.props.leftIcon && this.props.leftIcon === 'dashboard') {
-        //     return <Icon
-        //         name={this.props.leftIcon}
-        //         size={20}
-        //         style={[styles.navbarIcon, styles.indentLeft]}
-        //         onPress={() => Actions.dashboard()}
-        //     />
-        // }
     }
 
     _renderRightIcon() {
