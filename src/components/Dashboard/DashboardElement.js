@@ -62,7 +62,7 @@ export class DashboardElement extends Component {
     }
 
     _changeRoute() {
-        Actions.alerts();
+        Actions.globalMap();
     }
 
     render() {

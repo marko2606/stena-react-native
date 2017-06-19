@@ -7,6 +7,8 @@ import CustomNavBar from './shared/CustomNavBar/CustomNavBar';
 import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
+import GlobalMap from './components/GlobalMap/GlobalMap'
+import ShipDetailsMap from './components/GlobalMap/ShipDetailsMap/ShipDetailsMap'
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
@@ -25,7 +27,8 @@ class RouterComponent extends Component {
                 </Scene>
                 <Scene key="main"
                        style={{paddingTop: STATUSBAR_HEIGHT}}
-                       type={ActionConst.RESET}>
+                       type={ActionConst.RESET}
+                >
                     <Scene
                         key="dashboard"
                         sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
@@ -43,6 +46,26 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="ALERTS & NOTIFICATIONS"
+                    />
+                    <Scene
+                        key="globalMap"
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
+                        navBar={CustomNavBar}
+                        component={GlobalMap}
+                        icons={true}
+                        leftIcon="dashboard"
+                        rightIcon="search"
+                        title="Global Map"
+                    />
+                    <Scene
+                        key="shipDetailsMap"
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
+                        navBar={CustomNavBar}
+                        component={ShipDetailsMap}
+                        icons={true}
+                        rightIcon="search"
+                        leftIcon="dashboard"
+                        title="Ship Details Map"
                     />
                 </Scene>
             </Router>

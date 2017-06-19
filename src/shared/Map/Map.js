@@ -1,8 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { mapStyle } from './mapStyle';
 import { connect } from 'react-redux'
+import { Actions } from 'react-native-router-flux';
 
 import { styles } from '../../components/GlobalMap/ShipDetailsMap/styles'
 import { displayFooterSelectionDetails } from '../../components/GlobalMap/GlobalMapActions'
@@ -14,18 +15,24 @@ class Map extends React.Component {
             smallMap: false
         }
     }
+
+    displayShipDetails() {
+        console.log('remote to ship details');
+        Actions.refresh({type: 'reset'})
+        Actions.shipDetailsMap();
+    }
     render() {
         return (
             <View style={[styles.map, {height: this.props.globalMap.mapHeight}]}>
                 <MapView
+                    provider={PROVIDER_GOOGLE}
                     style={{height: '100%'}}
                     customMapStyle={mapStyle}
                     onPress={() => this.props.displayFooterSelectionDetails()}
                 >
                     <MapView.Marker
                         coordinate={{latitude: -8.059229627200192, longitude: 4.482421875}}
-                        identifier={'neki key od markera'}
-                        onPress={(event) => console.log('Marker Pressed!', event.nativeEvent.identifier)}
+                        onPress={() => this.displayShipDetails()}
                     />
                 </MapView>
             </View>
