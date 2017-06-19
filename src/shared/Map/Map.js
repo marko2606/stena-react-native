@@ -17,6 +17,7 @@ class Map extends React.Component {
     }
 
     displayShipDetails() {
+        console.log('remote to ship details');
         Actions.shipDetailsMap({latitude: -8.059229627200192, longitude: 4.482421875});
     }
 
@@ -58,4 +59,5 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, null)(Map);
+
+export default connect(mapStateToProps, {displayFooterSelectionDetails})(Map);

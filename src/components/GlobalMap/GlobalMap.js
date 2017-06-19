@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 
-import Header from './Header'
 import Map from '../../shared/Map/Map'
 import Footer from './Footer'
 
