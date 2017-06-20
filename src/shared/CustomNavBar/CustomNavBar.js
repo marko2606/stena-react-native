@@ -43,6 +43,14 @@ class CustomNavBar extends Component {
                     style={[styles.navbarIcon, styles.indentLeft]}
                     onPress={() => Actions.globalMap()}
                 />;
+            case 'back-button':
+                return (
+                    <TouchableWithoutFeedback
+                        onPress={() => Actions.pop()}
+                    >
+                        <Ionicons style={[styles.navbarIcon, styles.indentLeft]} name="ios-arrow-back" size={20} />
+                    </TouchableWithoutFeedback>
+                );
             default:
                 return null
         }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 
 import { styles } from './GlobalMapStyles'
 import IconFooter from './ShipDetailsMap/IconFooter'
@@ -17,6 +18,7 @@ class Footer extends React.Component {
                     text="Vessels"
                 />
                 <IconFooter
+                    onPress={() => Actions.filters()}
                     name='funnel'
                     size={22}
                     color={white}

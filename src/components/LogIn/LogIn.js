@@ -78,8 +78,8 @@ class LogIn extends React.Component {
 
         this.props.tryLogin(user);
 
-        // !!! TEMPORARY -- no need to type password every time while testing !!!
-        Actions.main();
+
+        Actions.main();// !!! TEMPORARY -- no need to type password every time while testing !!!
     }
 
     render() {
