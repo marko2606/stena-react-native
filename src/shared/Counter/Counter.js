@@ -4,10 +4,10 @@ import {View, Text} from 'react-native';
 import {styles} from './CounterStyle';
 
 export const Counter = (props) => {
-    const { container, counter } = styles;
+    const { container } = styles;
     return (
-        <View style={container}>
-            <Text style={counter}>{props.size}</Text>
+        <View style={[container, { left: props.positionLeft }]}>
+            <Text style={{ fontSize: props.fontSize }}>{props.size}</Text>
         </View>
     )
 };
