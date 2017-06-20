@@ -1,4 +1,4 @@
-
+import { SHIP_DETAILS_MAP } from '../../../actions/types';
 
 const INITIAL_STATE = {
     footerHeight: '10%',
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
-        case 'TOGGLE_FOOTER_SELECTION_DETAILS':
+        case SHIP_DETAILS_MAP.TOGGLE_FOOTER:
             let {footerHeight, mapHeight, isFooterSelectionOpen} = state;
             if(state.isFooterSelectionOpen) {
                 footerHeight = '10%';

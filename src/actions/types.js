@@ -6,3 +6,8 @@ export const LOGIN_ACTION_TYPES = {
     TRY_LOGIN: 'TRY_LOGIN',
     SET_ERROR: 'SET_ERROR'
 };
+
+export const SHIP_DETAILS_MAP = {
+    TOGGLE_FOOTER: 'SHIP_DETAILS_MAP'
+};
+

@@ -1,79 +1,57 @@
 import React from 'react';
-import { View, Dimensions } from 'react-native';
+import { View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
 import { styles } from './styles'
 import IconFooter from './IconFooter'
-import { connect } from 'react-redux';
-
-import {displayFooterSelectionDetails} from '../GlobalMapActions'
+import { colors } from '../../../Colors'
 
 class Footer extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            deviceWidth: Dimensions.get('screen').width
-        }
-    }
-
 
     render() {
+        const white = colors.whiteColor;
+        let {footerHeight, displayFooterSelectionDetails} = this.props;
         return (
-            <View style={[styles.footer, {height: this.props.GlobalMapReducer.footerHeight}]}>
+            <View style={[styles.footer, {height: footerHeight}]}>
                 <IconFooter
                     name='list'
                     size={22}
-                    color="white"
+                    color={white}
+                    onPress={(event) => console.log(event, event.nativeEvent)}
                     text="OverView"
-                    onPress={() => this.props.displayFooterSelectionDetails()}
+                    //onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='phone'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Contact"
-                    onPress={() => this.props.displayFooterSelectionDetails()}
+                    onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='suitcase'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Cargo"
-                    onPress={() => this.props.displayFooterSelectionDetails()}
+                    onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='documents'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Bunker info"
-                    onPress={() => this.props.displayFooterSelectionDetails()}
+                    onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='address'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Itinerary"
-                    onPress={() => this.props.displayFooterSelectionDetails()}
+                    onPress={() => displayFooterSelectionDetails()}
                 />
             </View>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        GlobalMapReducer: state.GlobalMapReducer
-    }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        displayFooterSelectionDetails: () => {
-            dispatch({
-                type: 'TOGGLE_FOOTER_SELECTION_DETAILS'
-            })
-        }
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Footer);
+export default Footer;

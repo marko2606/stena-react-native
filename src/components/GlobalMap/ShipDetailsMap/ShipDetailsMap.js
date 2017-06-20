@@ -1,24 +1,42 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { connect } from 'react-redux'
 
 import Map from '../../../shared/Map/Map'
 import Footer from './Footer'
-
-import { styles } from './styles'
+import { displayFooterSelectionDetailsAction } from './ShipDetailsMapActions'
 
 class ShipDetails extends React.Component {
     render() {
-        console.log(this.props, ' in shipDetailsMap')
+        let {latitude, longitude, displayFooterSelectionDetails, GlobalMapReducer} = this.props;
         return (
-            <View style={{height: '100%', backgroundColor:'red'}}>
+            <View>
                 <Map
-                    latitude={this.props.latitude}
-                    longitude={this.props.longitude}
+                    latitude={latitude}
+                    longitude={longitude}
+                    displayFooterSelectionDetails={displayFooterSelectionDetails}
                 />
-                <Footer/>
+                <Footer
+                    displayFooterSelectionDetails={displayFooterSelectionDetails}
+                    footerHeight={GlobalMapReducer.footerHeight}
+                />
             </View>
         )
     }
 }
 
-export default ShipDetails;
+const mapStateToProps = (state) => {
+    return {
+        GlobalMapReducer: state.ShipDetailsMapMapReducer
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        displayFooterSelectionDetails: () => {
+            displayFooterSelectionDetailsAction(dispatch);
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShipDetails);

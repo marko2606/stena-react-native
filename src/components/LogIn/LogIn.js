@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Image, Keyboard, LayoutAnimation, Platform, UIManager, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux'
 
 import { tryLoginAction } from './LoginActions';
 
@@ -76,6 +77,9 @@ class LogIn extends React.Component {
         };
 
         this.props.tryLogin(user);
+
+        // !!! TEMPORARY -- no need to type password every time while testing !!!
+        Actions.main();
     }
 
     render() {

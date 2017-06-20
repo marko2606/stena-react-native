@@ -3,33 +3,36 @@ import { View } from 'react-native'
 
 import { styles } from './styles'
 import IconFooter from './ShipDetailsMap/IconFooter'
+import { colors } from '../../Colors'
 
-class Header extends React.Component {
+class Footer extends React.Component {
     render() {
+        let white = colors.whiteColor;
+        console.log(white)
         return (
             <View style={styles.footer}>
                 <IconFooter
                     name='list'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Vessels"
                 />
                 <IconFooter
                     name='funnel'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Filter"
                 />
                 <IconFooter
                     name='globe'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Market"
                 />
                 <IconFooter
                     name='cloud'
                     size={22}
-                    color="white"
+                    color={white}
                     text="Weather"
                 />
             </View>
@@ -37,4 +40,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default Footer;
