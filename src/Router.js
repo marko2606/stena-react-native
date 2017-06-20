@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
 import GlobalMap from './components/GlobalMap/GlobalMap'
 import ShipDetailsMap from './components/GlobalMap/ShipDetailsMap/ShipDetailsMap'
+import { FiltersVessel } from './components/FiltersVessel/FiltersVessel';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
@@ -72,6 +73,17 @@ class RouterComponent extends Component {
                         leftIcon="back"
                         title="Ship Details Map"
                         type={ActionConst.REPLACE}
+                    />
+                    <Scene
+                        key="filters"
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
+                        component={FiltersVessel}
+                        navBar={CustomNavBar}
+                        icons={true}
+                        leftIcon="back-button"
+                        rightIcon="search"
+                        rightIconAlert="notifications_active"
+                        title="FILTERS"
                     />
                 </Scene>
             </Router>

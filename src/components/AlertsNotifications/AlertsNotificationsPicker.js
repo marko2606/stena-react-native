@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { Dropdown } from '../../shared/';
-import filterGroup from '../../utils/FilterDropdownGroup';
+import { filterGroup } from '../../utils/FilterGroupHelperData';
 import { styles } from './AlertsNotificationStyle';
 
 const AlertsNotificationsPicker = (props) => {
@@ -11,7 +11,7 @@ const AlertsNotificationsPicker = (props) => {
     return (
         <View style={props.style.pickerContainer}>
             <Dropdown
-                options={filterGroup}
+                options={filterGroup.map(vessels => vessels.group)}
                 dropdownStyle={dropdownStyle}
                 dropdownTextStyle={dropdownTextStyle}
                 textStyle={textStyle}

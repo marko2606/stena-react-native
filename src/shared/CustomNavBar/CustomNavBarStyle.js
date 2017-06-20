@@ -7,7 +7,7 @@ export const styles = {
         right: 0,
         left: 0,
         height: 50,
-        backgroundColor: colors['gradientPrimaryColor2'],
+        backgroundColor: colors['primaryColor2'],
         flex: 1,
         alignItems: 'center',
         borderBottomWidth: 1,
@@ -24,6 +24,10 @@ export const styles = {
     },
     indentLeft: {
         paddingLeft: 12
+    },
+    rightIconContainer: {
+        alignItems: 'flex-end',
+        flexDirection: 'row'
     },
     indentRight: {
         paddingRight: 12
