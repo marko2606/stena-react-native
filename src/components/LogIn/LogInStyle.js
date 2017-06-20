@@ -52,6 +52,7 @@ export const styles = {
         borderColor: 'rgba(29, 166, 138, .5)',
         marginBottom: 10,
         backgroundColor: '#0C252E',
+        color: colors['whiteColor']
     },
     logInButton: {
         marginTop: 20,
