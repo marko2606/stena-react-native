@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableWithoutFeedback} from 'react-native';
 import { Font } from 'expo';
-import { createIconSetFromIcoMoon } from '@expo/vector-icons';
+import { createIconSetFromIcoMoon, Ionicons } from '@expo/vector-icons';
 import {Actions} from 'react-native-router-flux';
 
 import icoMoonConfig from '../../utils/config.json';
@@ -35,13 +35,14 @@ class CustomNavBar extends Component {
                 style={[styles.navbarIcon, styles.indentLeft]}
                 onPress={() => Actions.dashboard()}
             />
-        } else if (this.props.leftIcon && this.props.leftIcon === 'keyboard_arrow_down') {      // TODO - arrow left
-            return <Icon
-                name={this.props.leftIcon}
-                size={20}
-                style={[styles.navbarIcon, styles.indentLeft]}
-                onPress={() => Actions.pop()}
-            />
+        } else if (this.props.leftIcon && this.props.leftIcon === 'back-button') {
+            return (
+                <TouchableWithoutFeedback
+                    onPress={() => Actions.pop()}
+                >
+                    <Ionicons style={[styles.navbarIcon, styles.indentLeft]} name="ios-arrow-back" size={20} />
+                </TouchableWithoutFeedback>
+            )
         }
     }
 

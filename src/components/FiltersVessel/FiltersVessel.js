@@ -1,18 +1,18 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import FooterFiltersShip from './FiltersVesselFooter';
-import FilterList from './FiltersList';
+import FiltersVesselFooter from './FiltersVesselFooter';
+import FiltersList from './FiltersList';
 
 import { styles } from './FiltersVesselStyle';
 
-export const FiltersShip = () => {
+export const FiltersVessel = () => {
     const { mainContainer } = styles;
 
     return (
         <View style={mainContainer}>
-            <FilterList />
-            <FooterFiltersShip />
+            <FiltersList />
+            <FiltersVesselFooter />
         </View>
     );
 };

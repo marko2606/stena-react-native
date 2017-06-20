@@ -19,10 +19,10 @@ class FiltersList extends Component {
         super();
         this.state = {
             fontLoaded: false,
-            activeFilterGroup: false,
-            activeFilterGroup2: false,
-            activeFilterGroup3: false,
-            activeFilterGroup4: false
+            vesselTypeGroup: false,
+            vesselTypeGroup2: false,
+            vesselTypeGroup3: false,
+            vesselTypeGroup4: false
         }
     }
 
@@ -35,25 +35,27 @@ class FiltersList extends Component {
     }
 
     onClickExpandGroup(groups) {
+        let { vesselTypeGroup, vesselTypeGroup2, vesselTypeGroup3, vesselTypeGroup4 } = this.state;
+
         switch (groups) {
             case 'groups':
                 this.setState({
-                    activeFilterGroup: this.state.activeFilterGroup ? false : true
+                    vesselTypeGroup: vesselTypeGroup ? false : true
                 });
                 break;
             case 'segment':
                 this.setState({
-                    activeFilterGroup2: this.state.activeFilterGroup2 ? false : true
+                    vesselTypeGroup2: vesselTypeGroup2 ? false : true
                 });
                 break;
             case 'company':
                 this.setState({
-                    activeFilterGroup3: this.state.activeFilterGroup3 ? false : true
+                    vesselTypeGroup3: vesselTypeGroup3 ? false : true
                 });
                 break;
             case 'vesselType':
                 this.setState({
-                    activeFilterGroup4: this.state.activeFilterGroup4 ? false : true
+                    vesselTypeGroup4: vesselTypeGroup4 ? false : true
                 });
                 break;
             default:
@@ -62,21 +64,24 @@ class FiltersList extends Component {
     }
 
     iconRender(groups) {
-        let arrowUp = <Icon name="keyboard_arrow_up" size={25} color={colors['grayColor']}/>;
-        let arrowDown = <Icon name="keyboard_arrow_down" size={25} color={colors['grayColor']}/>;
+        let arrowSize = 25;
+        let arrowUp = <Icon name="keyboard_arrow_up" size={arrowSize} color={colors['grayColor']}/>;
+        let arrowDown = <Icon name="keyboard_arrow_down" size={arrowSize} color={colors['grayColor']}/>;
+
+        let { vesselTypeGroup, vesselTypeGroup2, vesselTypeGroup3, vesselTypeGroup4 } = this.state;
 
         switch (groups) {
             case 'groups':
-                return this.state.activeFilterGroup ? arrowUp : arrowDown;
+                return vesselTypeGroup ? arrowUp : arrowDown;
             break;
             case 'segment':
-                return this.state.activeFilterGroup2 ? arrowUp : arrowDown;
+                return vesselTypeGroup2 ? arrowUp : arrowDown;
                 break;
             case 'company':
-                return this.state.activeFilterGroup3 ? arrowUp : arrowDown;
+                return vesselTypeGroup3 ? arrowUp : arrowDown;
                 break;
             case 'vesselType':
-                return this.state.activeFilterGroup4 ? arrowUp : arrowDown;
+                return vesselTypeGroup4 ? arrowUp : arrowDown;
                 break;
             default:
                 return groups
@@ -105,28 +110,28 @@ class FiltersList extends Component {
             <ScrollView>
                 <FilterGroup
                     heading='Filter by groups'
-                    renderFilterList={this.state.activeFilterGroup ? this.renderFilterList('groups') : null}
+                    renderFilterList={this.state.vesselTypeGroup ? this.renderFilterList('groups') : null}
                     onPress={this.onClickExpandGroup.bind(this, 'groups')}
                     Icon={this.iconRender('groups')}
                 />
 
                 <FilterGroup
                     heading='Filter by segment'
-                    renderFilterList={this.state.activeFilterGroup2 ? this.renderFilterList('segment') : null}
+                    renderFilterList={this.state.vesselTypeGroup2 ? this.renderFilterList('segment') : null}
                     onPress={this.onClickExpandGroup.bind(this, 'segment')}
                     Icon={this.iconRender('segment')}
                 />
 
                 <FilterGroup
                     heading='Filter by company'
-                    renderFilterList={this.state.activeFilterGroup3 ? this.renderFilterList('company') : null}
+                    renderFilterList={this.state.vesselTypeGroup3 ? this.renderFilterList('company') : null}
                     onPress={this.onClickExpandGroup.bind(this, 'company')}
                     Icon={this.iconRender('company')}
                 />
 
                 <FilterGroup
                     heading='Filter by vessel type'
-                    renderFilterList={this.state.activeFilterGroup4 ? this.renderFilterList('vesselType') : null}
+                    renderFilterList={this.state.vesselTypeGroup4 ? this.renderFilterList('vesselType') : null}
                     onPress={this.onClickExpandGroup.bind(this, 'vesselType')}
                     Icon={this.iconRender('vesselType')}
                 />

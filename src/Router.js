@@ -7,7 +7,7 @@ import CustomNavBar from './shared/CustomNavBar/CustomNavBar';
 import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
-import { FiltersShip } from './components/FiltersVessel/FiltersVessel';
+import { FiltersVessel } from './components/FiltersVessel/FiltersVessel';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
@@ -48,14 +48,13 @@ class RouterComponent extends Component {
                     <Scene
                         key="filters"
                         sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
-                        component={FiltersShip}
+                        component={FiltersVessel}
                         navBar={CustomNavBar}
                         icons={true}
-                        leftIcon="keyboard_arrow_down"  // TODO - arrow-left
+                        leftIcon="back-button"
                         rightIcon="search"
                         rightIconAlert="notifications_active"
                         title="FILTERS"
-                        initial
                     />
                 </Scene>
             </Router>
