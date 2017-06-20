@@ -1,5 +1,5 @@
 import {
-    GET_DATA_SUCCESS, GET_DATA_ERROR
+    SHIP_GET_DATA
 } from '../../actions/types';
 
 const INITIAL_STATE = {
@@ -9,12 +9,12 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GET_DATA_SUCCESS:
+        case SHIP_GET_DATA.GET_DATA_SUCCESS:
             return Object.assign({}, state, {
                 dataStena: action.payload
             });
             break;
-        case GET_DATA_ERROR:
+        case SHIP_GET_DATA.GET_DATA_ERROR:
             return Object.assign({}, state, {
                 errorMessage: action.errorMessage
             });

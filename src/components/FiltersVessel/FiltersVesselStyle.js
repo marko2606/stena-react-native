@@ -41,16 +41,26 @@ export const styles = {
         paddingTop: 15,
         paddingBottom: 10
     },
-    leftTextCheckbox: {
+    leftTextContainer: {
+        flexDirection: 'row'
+    },
+    leftTextVesselName: {
         color: colors['whiteColor'],
         fontSize: 12
+    },
+    leftTextNumberOfVessels: {
+        color: colors['grayColor'],
+        fontSize: 11,
+        paddingLeft: 5
     },
     checkedImageContainer: {
         height: 15,
         width: 15,
         backgroundColor: 'transparent',
         borderWidth: 0.6,
-        borderColor: colors['primaryColor1']
+        borderColor: colors['primaryColor1'],
+        position: 'absolute',
+        right: 0
     },
     checkedImageView: {
         flex: 1,

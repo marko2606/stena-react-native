@@ -1,16 +1,4 @@
-const filterGroup = [
-    'ALL VESSELS',
-    'MY FLEET',
-    'SUEZMAX',
-    'STENA BULK',
-    'STENA WECO',
-    'GOLDEN STENA WECO',
-    'STENA LNG',
-    'MORE OPTIONS',
-    'MORE OPTIONS 2',
-];
-
-export const filterGroup2 = [
+export const filterGroup = [
     {
         id: 1,
         group: 'ALL VESSELS',
@@ -52,5 +40,3 @@ export const filterGroup2 = [
         type: 'vesselType'
     }
 ];
-
-export default filterGroup;

@@ -25,6 +25,10 @@ export const styles = {
     indentLeft: {
         paddingLeft: 12
     },
+    rightIconContainer: {
+        alignItems: 'flex-end',
+        flexDirection: 'row'
+    },
     indentRight: {
         paddingRight: 12
     }

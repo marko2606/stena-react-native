@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text } from 'react-native'
+import { View, ScrollView } from 'react-native'
 import { Font } from 'expo';
 
-import CheckBox from 'react-native-check-box'
-
 import { FilterGroup } from './FilterGroup';
-import { filterGroup2 } from '../../utils/FilterDropdownGroup';
+import { filterGroup } from '../../utils/FilterGroupHelperData';
 
 import { createIconSetFromIcoMoon } from '@expo/vector-icons';
 import icoMoonConfig from '../../utils/config.json';
 import { colors } from '../../Colors';
-import { styles } from './FiltersShipStyle';
+
+import { FiltersCheckbox } from './FiltersCheckbox';
 
 const Icon = createIconSetFromIcoMoon(icoMoonConfig, "icomoon");
 
@@ -35,59 +34,30 @@ class FiltersList extends Component {
         this.setState({fontLoaded: true});
     }
 
-    checkedImage() {
-        const { checkedImageContainer, checkedImageView } = styles;
-        return (
-            <View style={checkedImageContainer}>
-                <View style={checkedImageView}/>
-            </View>
-        )
-    }
-
-    unCheckedImage() {
-        const { checkedImageContainer } = styles;
-        return <View style={checkedImageContainer}/>
-    }
-
-    renderFilterList(groups) {
-        const { checkBoxMain, leftTextCheckbox } = styles;
-
-        return filterGroup2.map((filter) => {
-            if(filter.type === groups) {
-                return (
-                    <View key={filter.id} >
-                        <CheckBox
-                            style={checkBoxMain}
-                            onClick={()=> null}
-                            isChecked={false}
-                            leftText={filter.group}
-                            leftTextStyle={leftTextCheckbox}
-                            checkedImage={this.checkedImage()}
-                            unCheckedImage={this.unCheckedImage()}
-                        />
-                    </View>
-                )
-            }
-        })
-    }
-
     onClickExpandGroup(groups) {
-        if (groups === 'groups') {
-            this.setState({
-                activeFilterGroup: this.state.activeFilterGroup ? false : true
-            })
-        } else if (groups === 'segment') {
-            this.setState({
-                activeFilterGroup2: this.state.activeFilterGroup2 ? false : true
-            })
-        } else if (groups === 'company') {
-            this.setState({
-                activeFilterGroup3: this.state.activeFilterGroup3 ? false : true
-            })
-        } else if (groups === 'vesselType') {
-            this.setState({
-                activeFilterGroup4: this.state.activeFilterGroup4 ? false : true
-            })
+        switch (groups) {
+            case 'groups':
+                this.setState({
+                    activeFilterGroup: this.state.activeFilterGroup ? false : true
+                });
+                break;
+            case 'segment':
+                this.setState({
+                    activeFilterGroup2: this.state.activeFilterGroup2 ? false : true
+                });
+                break;
+            case 'company':
+                this.setState({
+                    activeFilterGroup3: this.state.activeFilterGroup3 ? false : true
+                });
+                break;
+            case 'vesselType':
+                this.setState({
+                    activeFilterGroup4: this.state.activeFilterGroup4 ? false : true
+                });
+                break;
+            default:
+                return groups
         }
     }
 
@@ -95,23 +65,41 @@ class FiltersList extends Component {
         let arrowUp = <Icon name="keyboard_arrow_up" size={25} color={colors['grayColor']}/>;
         let arrowDown = <Icon name="keyboard_arrow_down" size={25} color={colors['grayColor']}/>;
 
-        if (groups === 'groups') {
-            return this.state.activeFilterGroup ? arrowUp : arrowDown
-        } else if (groups === 'segment') {
-            return this.state.activeFilterGroup2 ? arrowUp : arrowDown
-        } else if (groups === 'company') {
-            return this.state.activeFilterGroup3 ? arrowUp : arrowDown
-        } else if (groups === 'vesselType') {
-            return this.state.activeFilterGroup4 ? arrowUp : arrowDown
+        switch (groups) {
+            case 'groups':
+                return this.state.activeFilterGroup ? arrowUp : arrowDown;
+            break;
+            case 'segment':
+                return this.state.activeFilterGroup2 ? arrowUp : arrowDown;
+                break;
+            case 'company':
+                return this.state.activeFilterGroup3 ? arrowUp : arrowDown;
+                break;
+            case 'vesselType':
+                return this.state.activeFilterGroup4 ? arrowUp : arrowDown;
+                break;
+            default:
+                return groups
         }
+    }
 
+    renderFilterList(groups) {
+        return filterGroup.map((filter) => {
+            if(filter.type === groups) {
+                return (
+                    <View key={filter.id} >
+                        <FiltersCheckbox
+                            vesselsName={filter.group}
+                            numberOfVessels={filter.id}
+                        />
+                    </View>
+                )
+            }
+        })
     }
 
     render() {
-
-        if (!this.state.fontLoaded) {
-            return null;
-        }
+        if (!this.state.fontLoaded) return null;
 
         return (
             <ScrollView>

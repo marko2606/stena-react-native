@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import FooterFiltersShip from './FooterFiltersShip';
+import FooterFiltersShip from './FiltersVesselFooter';
 import FilterList from './FiltersList';
 
-import { styles } from './FiltersShipStyle';
+import { styles } from './FiltersVesselStyle';
 
 export const FiltersShip = () => {
     const { mainContainer } = styles;

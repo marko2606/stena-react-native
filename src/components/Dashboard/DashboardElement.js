@@ -57,7 +57,7 @@ export class DashboardElement extends Component {
 
     _renderCounter() {
         if (this.props.counter) {
-            return <Counter size={this.props.counter}/>
+            return <Counter positionLeft={25} fontSize={12} size={this.props.counter}/>
         }
     }
 
@@ -77,10 +77,12 @@ export class DashboardElement extends Component {
                                 onShowUnderlay={this._onPress.bind(this)}
                                 onHideUnderlay={this._onPressOut.bind(this)}>
                 <View style={{...dashboardElementContainer, height: boxHeight, width: boxWidth}}>
-                    <Icon name={this.props.icon} size={45} style={dashboardElementIcon}/>
+                    <View>
+                        <Icon name={this.props.icon} size={45} style={dashboardElementIcon}/>
+                        {this._renderCounter()}
+                    </View>
                     <Text
                         style={{...dashboardElementTitle, ...this.state.dashboardElementTitleColor}}>{this.props.title.toUpperCase()}</Text>
-                    {this._renderCounter()}
                 </View>
             </TouchableHighlight>
         )
