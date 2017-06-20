@@ -1,14 +1,13 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { styles } from './styles'
+import { styles } from './GlobalMapStyles'
 import IconFooter from './ShipDetailsMap/IconFooter'
 import { colors } from '../../Colors'
 
 class Footer extends React.Component {
     render() {
         let white = colors.whiteColor;
-        console.log(white)
         return (
             <View style={styles.footer}>
                 <IconFooter

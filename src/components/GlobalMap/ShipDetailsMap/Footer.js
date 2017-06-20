@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-import { styles } from './styles'
+import { styles } from './ShipDetailsMapStyles'
 import IconFooter from './IconFooter'
 import { colors } from '../../../Colors'
 

@@ -5,7 +5,7 @@ import { mapStyle } from './mapStyle';
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux';
 
-import { styles } from '../../components/GlobalMap/ShipDetailsMap/styles'
+import { styles } from '../../components/GlobalMap/ShipDetailsMap/ShipDetailsMapStyles'
 
 class Map extends React.Component {
     constructor() {

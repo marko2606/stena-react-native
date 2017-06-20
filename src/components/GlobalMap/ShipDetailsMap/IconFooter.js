@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-import { styles } from './styles'
+import { styles } from './ShipDetailsMapStyles'
 
 class IconFooter extends React.Component {
     render() {
