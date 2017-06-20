@@ -1,5 +1,8 @@
 import React from 'react';
 import { View, Image, Keyboard, LayoutAnimation, Platform, UIManager, Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+
+import { tryLoginAction } from './LoginActions';
 
 import { Gradient } from '../../shared/';
 import Input from './Input';
@@ -9,7 +12,7 @@ import Header from './Header';
 import { styles } from './LogInStyle';
 import { colors } from '../../Colors';
 
-export default class LogIn extends React.Component {
+class LogIn extends React.Component {
 
     constructor(props) {
         super(props);
@@ -17,7 +20,9 @@ export default class LogIn extends React.Component {
             inputPosition: 'relative',
             inputBottom: 0,
             screenWidth: Dimensions.get('screen').width,
-            SOPFontSize: 0
+            SOPFontSize: 0,
+            username: '',
+            password: ''
         };
         if (Platform.OS === 'android') {
             UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -52,6 +57,27 @@ export default class LogIn extends React.Component {
         });
     }
 
+    handleUsernameChanged(event) {
+        this.setState({
+            username: event.nativeEvent.text
+        })
+    }
+
+    handlePasswordChanged(event) {
+        this.setState({
+            password: event.nativeEvent.text
+        })
+    }
+
+    loginUser() {
+        const user = {
+            username: this.state.username,
+            password: this.state.password
+        };
+
+        this.props.tryLogin(user);
+    }
+
     render() {
         return (
             <Gradient
@@ -72,13 +98,36 @@ export default class LogIn extends React.Component {
                         width: '100%',
                         bottom: this.state.inputBottom
                     }}>
-                        <Input placeholder="Username"/>
-                        <Input placeholder="Password"/>
+                        <Input
+                            placeholder="Username"
+                            onChange={this.handleUsernameChanged.bind(this)}
+                        />
+                        <Input
+                            placeholder="Password"
+                            onChange={this.handlePasswordChanged.bind(this)}
+                            secureTextEntry={true}
+                        />
                     </View>
-                    <LoginBtn/>
+                    <LoginBtn onPress={this.loginUser.bind(this)}/>
                     <Footer/>
                 </View>
             </Gradient>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        error: state.loginReducer.error
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        tryLogin: (user) => {
+            tryLoginAction(dispatch, user);
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
