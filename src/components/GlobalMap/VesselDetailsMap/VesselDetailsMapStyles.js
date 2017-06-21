@@ -1,8 +1,10 @@
+import { colors } from '../../../Colors'
+
 export const styles = {
     footer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        backgroundColor: '#0F2D38'
+        backgroundColor: colors.primaryColor2
     },
     icon: {
         alignItems: 'center',

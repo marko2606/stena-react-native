@@ -2,50 +2,49 @@ import React from 'react';
 import { View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-import { styles } from './ShipDetailsMapStyles'
+import { styles } from './VesselDetailsMapStyles'
 import IconFooter from './IconFooter'
 import { colors } from '../../../Colors'
 
 class Footer extends React.Component {
 
     render() {
-        const white = colors.whiteColor;
+        const {whiteColor} = colors;
         let {footerHeight, displayFooterSelectionDetails} = this.props;
         return (
             <View style={[styles.footer, {height: footerHeight}]}>
                 <IconFooter
                     name='list'
                     size={22}
-                    color={white}
-                    onPress={(event) => console.log(event, event.nativeEvent)}
+                    color={whiteColor}
                     text="OverView"
-                    //onPress={() => displayFooterSelectionDetails()}
+                    onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='phone'
                     size={22}
-                    color={white}
+                    color={whiteColor}
                     text="Contact"
                     onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='suitcase'
                     size={22}
-                    color={white}
+                    color={whiteColor}
                     text="Cargo"
                     onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='documents'
                     size={22}
-                    color={white}
+                    color={whiteColor}
                     text="Bunker info"
                     onPress={() => displayFooterSelectionDetails()}
                 />
                 <IconFooter
                     name='address'
                     size={22}
-                    color={white}
+                    color={whiteColor}
                     text="Itinerary"
                     onPress={() => displayFooterSelectionDetails()}
                 />

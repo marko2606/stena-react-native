@@ -9,7 +9,7 @@ export const VESSEL_ACTION_TYPES = {
 
 };
 
-export const SHIP_DETAILS_MAP = {
-    TOGGLE_FOOTER: 'SHIP_DETAILS_MAP'
+export const VESSEL_DETAILS_MAP = {
+    TOGGLE_FOOTER: 'VESSEL_DETAILS_MAP'
 };
 

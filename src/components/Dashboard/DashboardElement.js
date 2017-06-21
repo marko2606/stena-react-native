@@ -68,8 +68,7 @@ export class DashboardElement extends Component {
             case 'alerts':
                 return Actions.alerts();
             default:
-                console.log(this.props.title, 'component is not yet activated');
-                return null
+                return null;
         }
     }
 

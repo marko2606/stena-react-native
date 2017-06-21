@@ -8,8 +8,8 @@ import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
 import GlobalMap from './components/GlobalMap/GlobalMap'
-import ShipDetailsMap from './components/GlobalMap/ShipDetailsMap/ShipDetailsMap'
-import { FiltersVessel } from './components/FiltersVessel/FiltersVessel';
+import VesselDetailsMap from './components/GlobalMap/VesselDetailsMap/VesselDetailsMap'
+import { FiltersVessel } from './components/GlobalMap/FiltersVessel/FiltersVessel';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
@@ -17,6 +17,7 @@ const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 class RouterComponent extends Component {
     render() {
         // NOTE: type={ActionConst.REPLACE} needs to be added in order for maps to render properly.
+        const {RESET, REPLACE} = ActionConst;
         return (
             <Router>
                 <Scene key="auth">
@@ -30,7 +31,7 @@ class RouterComponent extends Component {
 
                 <Scene key="main"
                        style={{paddingTop: STATUSBAR_HEIGHT}}
-                       type={ActionConst.RESET}
+                       type={RESET}
                 >
                     <Scene
                         key="dashboard"
@@ -39,7 +40,7 @@ class RouterComponent extends Component {
                         title="OPERATIONAL PLATFORM DASHBOARD"
                         navBar={CustomNavBar}
                         initial
-                        type={ActionConst.REPLACE}
+                        type={REPLACE}
                     />
                     <Scene
                         key="alerts"
@@ -50,7 +51,7 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="ALERTS & NOTIFICATIONS"
-                        type={ActionConst.REPLACE}
+                        type={REPLACE}
                     />
                     <Scene
                         key="globalMap"
@@ -61,18 +62,18 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="Global Map"
-                        type={ActionConst.REPLACE}
+                        type={REPLACE}
                     />
                     <Scene
                         key="shipDetailsMap"
                         sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
                         navBar={CustomNavBar}
-                        component={ShipDetailsMap}
+                        component={VesselDetailsMap}
                         icons={true}
                         rightIcon="search"
                         leftIcon="back"
-                        title="Ship Details Map"
-                        type={ActionConst.REPLACE}
+                        title="Vessel Details Map"
+                        type={REPLACE}
                     />
                     <Scene
                         key="filters"

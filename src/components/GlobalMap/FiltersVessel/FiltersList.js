@@ -3,11 +3,11 @@ import { View, ScrollView } from 'react-native'
 import { Font } from 'expo';
 
 import { FilterGroup } from './FilterGroup';
-import { filterGroup } from '../../utils/FilterGroupHelperData';
+import { filterGroup } from '../../../utils/FilterGroupHelperData';
 
 import { createIconSetFromIcoMoon } from '@expo/vector-icons';
-import icoMoonConfig from '../../utils/config.json';
-import { colors } from '../../Colors';
+import icoMoonConfig from '../../../utils/config.json';
+import { colors } from '../../../Colors';
 
 import { FiltersCheckbox } from './FiltersCheckbox';
 
@@ -28,7 +28,7 @@ class FiltersList extends Component {
 
     async componentDidMount() {
         await Font.loadAsync({
-            'icomoon': require('../../assets/fonts/icomoon.ttf')
+            'icomoon': require('../../../assets/fonts/icomoon.ttf')
         });
 
         this.setState({fontLoaded: true});

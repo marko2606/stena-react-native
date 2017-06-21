@@ -5,7 +5,7 @@ import { mapStyle } from './mapStyle';
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux';
 
-import { styles } from '../../components/GlobalMap/ShipDetailsMap/ShipDetailsMapStyles'
+import { styles } from '../../components/GlobalMap/VesselDetailsMap/VesselDetailsMapStyles'
 
 class Map extends React.Component {
     constructor() {
@@ -15,12 +15,12 @@ class Map extends React.Component {
         }
     }
 
-    displayShipDetails() {
+    displayVesselDetails() {
         Actions.shipDetailsMap({latitude: -8.059229627200192, longitude: 4.482421875});
     }
 
     displayFooterSelectionDetails() {
-        // only active if component is receiving props from ShipDetails.
+        // only active if component is receiving props from VesselDetailsMap.
         if(this.props.displayFooterSelectionDetails) {
             return this.props.displayFooterSelectionDetails()
         }
@@ -51,7 +51,7 @@ class Map extends React.Component {
                 >
                     <MapView.Marker
                         coordinate={{latitude: -8.059229627200192, longitude: 4.482421875}}
-                        onPress={() => this.displayShipDetails()}
+                        onPress={() => this.displayVesselDetails()}
                     />
                 </MapView>
             </View>
@@ -61,7 +61,7 @@ class Map extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        globalMap: state.ShipDetailsMapMapReducer
+        globalMap: state.VesselDetailsMapReducer
     }
 };
 

@@ -1,4 +1,4 @@
-import { SHIP_DETAILS_MAP } from '../../../actions/types';
+import { VESSEL_DETAILS_MAP } from '../../../actions/types';
 
 const INITIAL_STATE = {
     footerHeight: '10%',
@@ -8,15 +8,19 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
-        case SHIP_DETAILS_MAP.TOGGLE_FOOTER:
+        case VESSEL_DETAILS_MAP.TOGGLE_FOOTER:
             let {footerHeight, mapHeight, isFooterSelectionOpen} = state;
+            const smallFooterHeight = '10%';
+            const largeFooterHeight = '70%';
+            const smallMapHeight = '30%';
+            const largeMapHeight = '90%';
             if(state.isFooterSelectionOpen) {
-                footerHeight = '10%';
-                mapHeight = '90%';
+                footerHeight = smallFooterHeight;
+                mapHeight = largeMapHeight;
                 isFooterSelectionOpen = !state.isFooterSelectionOpen;
             } else {
-                footerHeight = '70%';
-                mapHeight = '30%';
+                footerHeight = largeFooterHeight;
+                mapHeight = smallMapHeight;
                 isFooterSelectionOpen = !state.isFooterSelectionOpen;
             }
             return Object.assign({}, state, {

@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 
 import Map from '../../../shared/Map/Map'
 import Footer from './Footer'
-import { displayFooterSelectionDetailsAction } from './ShipDetailsMapActions'
+import { displayFooterSelectionDetailsAction } from './VesselDetailsMapActions'
 
-class ShipDetails extends React.Component {
+class VesselDetailsMap extends React.Component {
     render() {
         let {latitude, longitude, displayFooterSelectionDetails, GlobalMapReducer} = this.props;
         return (
@@ -27,7 +27,7 @@ class ShipDetails extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        GlobalMapReducer: state.ShipDetailsMapMapReducer
+        GlobalMapReducer: state.VesselDetailsMapReducer
     }
 };
 
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShipDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(VesselDetailsMap);

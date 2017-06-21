@@ -75,10 +75,7 @@ class LogIn extends React.Component {
             username: this.state.username,
             password: this.state.password
         };
-
         this.props.tryLogin(user);
-
-
         Actions.main();// !!! TEMPORARY -- no need to type password every time while testing !!!
     }
 
