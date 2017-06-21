@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import { Footer } from '../../shared/';
+import { Footer } from '../../../shared/index';
 
 import { styles } from './FiltersVesselStyle';
 

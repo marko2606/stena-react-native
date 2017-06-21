@@ -7,13 +7,17 @@ import CustomNavBar from './shared/CustomNavBar/CustomNavBar';
 import LogIn from './components/LogIn/LogIn';
 import Dashboard from './components/Dashboard/Dashboard'
 import AlertsNotification from './components/AlertsNotifications/AlertNotifications';
-import { FiltersVessel } from './components/FiltersVessel/FiltersVessel';
+import GlobalMap from './components/GlobalMap/GlobalMap'
+import VesselDetailsMap from './components/GlobalMap/VesselDetailsMap/VesselDetailsMap'
+import { FiltersVessel } from './components/GlobalMap/FiltersVessel/FiltersVessel';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 
 class RouterComponent extends Component {
     render() {
+        // NOTE: type={ActionConst.REPLACE} needs to be added in order for maps to render properly.
+        const {RESET, REPLACE} = ActionConst;
         return (
             <Router>
                 <Scene key="auth">
@@ -24,9 +28,11 @@ class RouterComponent extends Component {
                         hideNavBar
                     />
                 </Scene>
+
                 <Scene key="main"
                        style={{paddingTop: STATUSBAR_HEIGHT}}
-                       type={ActionConst.RESET}>
+                       type={RESET}
+                >
                     <Scene
                         key="dashboard"
                         sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
@@ -34,6 +40,7 @@ class RouterComponent extends Component {
                         title="OPERATIONAL PLATFORM DASHBOARD"
                         navBar={CustomNavBar}
                         initial
+                        type={REPLACE}
                     />
                     <Scene
                         key="alerts"
@@ -44,6 +51,29 @@ class RouterComponent extends Component {
                         leftIcon="dashboard"
                         rightIcon="search"
                         title="ALERTS & NOTIFICATIONS"
+                        type={REPLACE}
+                    />
+                    <Scene
+                        key="globalMap"
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
+                        navBar={CustomNavBar}
+                        component={GlobalMap}
+                        icons={true}
+                        leftIcon="dashboard"
+                        rightIcon="search"
+                        title="Global Map"
+                        type={REPLACE}
+                    />
+                    <Scene
+                        key="shipDetailsMap"
+                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
+                        navBar={CustomNavBar}
+                        component={VesselDetailsMap}
+                        icons={true}
+                        rightIcon="search"
+                        leftIcon="back"
+                        title="Vessel Details Map"
+                        type={REPLACE}
                     />
                     <Scene
                         key="filters"

@@ -16,8 +16,14 @@ export class DashboardList extends Component {
                         return (
                             <View style={styles.dashboardListContainer} key={i}>
                                 {row.map((menuItem, k) => {
+                                    let {title, icon, counter, routeName} = menuItem;
                                     return <DashboardElement
-                                        title={menuItem.title} icon={menuItem.icon} counter={menuItem.counter} key={k}/>
+                                        title={title}
+                                        icon={icon}
+                                        counter={counter}
+                                        key={k}
+                                        routeName={routeName}
+                                    />
                                 })}
                             </View>
                         )

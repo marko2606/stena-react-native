@@ -28,21 +28,31 @@ class CustomNavBar extends Component {
     }
 
     _renderLeftIcon() {
-        if (this.props.leftIcon && this.props.leftIcon === 'dashboard') {
-            return <Icon
-                name={this.props.leftIcon}
-                size={20}
-                style={[styles.navbarIcon, styles.indentLeft]}
-                onPress={() => Actions.dashboard()}
-            />
-        } else if (this.props.leftIcon && this.props.leftIcon === 'back-button') {
-            return (
-                <TouchableWithoutFeedback
-                    onPress={() => Actions.pop()}
-                >
-                    <Ionicons style={[styles.navbarIcon, styles.indentLeft]} name="ios-arrow-back" size={20} />
-                </TouchableWithoutFeedback>
-            )
+        switch(this.props.leftIcon) {
+            case 'dashboard':
+                return <Icon
+                    name={this.props.leftIcon}
+                    size={20}
+                    style={[styles.navbarIcon, styles.indentLeft]}
+                    onPress={() => Actions.dashboard()}
+                />;
+            case 'back':
+                return <Icon
+                    name={'chevron-left'}
+                    size={20}
+                    style={[styles.navbarIcon, styles.indentLeft]}
+                    onPress={() => Actions.globalMap()}
+                />;
+            case 'back-button':
+                return (
+                    <TouchableWithoutFeedback
+                        onPress={() => Actions.pop()}
+                    >
+                        <Ionicons style={[styles.navbarIcon, styles.indentLeft]} name="ios-arrow-back" size={20} />
+                    </TouchableWithoutFeedback>
+                );
+            default:
+                return null
         }
     }
 

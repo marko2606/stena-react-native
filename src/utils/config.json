@@ -4,6 +4,56 @@
     {
       "icon": {
         "paths": [
+          "M444.267 512l225.867-225.867c16.533-16.533 16.533-43.733 0-60.267s-43.733-16.533-60.267 0l-256 256c-16.533 16.533-16.533 43.733 0 60.267l256 256c8.267 8.267 19.2 12.533 30.133 12.533s21.867-4.267 30.133-12.533c16.533-16.533 16.533-43.733 0-60.267l-225.867-225.867z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "chevron-left"
+        ],
+        "grid": 24
+      },
+      "attrs": [],
+      "properties": {
+        "id": 34,
+        "order": 9,
+        "prevSize": 24,
+        "code": 59648,
+        "name": "chevron-left"
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 33
+    },
+    {
+      "icon": {
+        "paths": [
+          "M670.133 481.867l-256-256c-16.533-16.533-43.733-16.533-60.267 0s-16.533 43.733 0 60.267l225.867 225.867-225.867 225.867c-16.533 16.533-16.533 43.733 0 60.267 8.267 8.267 19.2 12.533 30.133 12.533s21.867-4.267 30.133-12.533l256-256c16.8-16.533 16.8-43.733-0-60.267z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "chevron-right"
+        ],
+        "grid": 24
+      },
+      "attrs": [],
+      "properties": {
+        "id": 35,
+        "order": 10,
+        "prevSize": 24,
+        "code": 59649,
+        "name": "chevron-right"
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 34
+    },
+    {
+      "icon": {
+        "paths": [
           "M614 256h240v426h-300l-16-84h-240v298h-84v-726h384z"
         ],
         "attrs": [],
@@ -18,15 +68,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "assistant_photo, flag",
-        "id": 62,
+        "id": 0,
         "order": 24,
         "prevSize": 24,
         "code": 57683,
         "name": "flag"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 62
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 0
     },
     {
       "icon": {
@@ -45,15 +95,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "clear, close",
-        "id": 157,
+        "id": 1,
         "order": 19,
         "prevSize": 24,
         "code": 58829,
         "name": "close"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 157
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 1
     },
     {
       "icon": {
@@ -72,15 +122,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "dashboard",
-        "id": 198,
+        "id": 2,
         "order": 26,
         "prevSize": 24,
         "code": 59505,
         "name": "dashboard"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 198
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 2
     },
     {
       "icon": {
@@ -99,15 +149,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "equalizer",
-        "id": 244,
+        "id": 3,
         "order": 21,
         "prevSize": 24,
         "code": 57373,
         "name": "equalizer"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 244
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 3
     },
     {
       "icon": {
@@ -126,15 +176,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "gps_fixed, my_location",
-        "id": 359,
+        "id": 4,
         "order": 20,
         "prevSize": 24,
         "code": 58716,
         "name": "my_location"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 359
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 4
     },
     {
       "icon": {
@@ -153,15 +203,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "keyboard_arrow_down",
-        "id": 411,
+        "id": 5,
         "order": 28,
         "prevSize": 24,
         "code": 58131,
         "name": "keyboard_arrow_down"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 411
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 5
     },
     {
       "icon": {
@@ -180,15 +230,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "keyboard_arrow_up",
-        "id": 414,
-        "order": 29,
+        "id": 6,
+        "order": 4,
         "prevSize": 24,
         "code": 58134,
         "name": "keyboard_arrow_up"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 414
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 6
     },
     {
       "icon": {
@@ -207,15 +257,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "notifications_active",
-        "id": 527,
+        "id": 7,
         "order": 22,
         "prevSize": 24,
         "code": 59383,
         "name": "notifications_active"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 527
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 7
     },
     {
       "icon": {
@@ -234,15 +284,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "notifications_none",
-        "id": 528,
+        "id": 8,
         "order": 27,
         "prevSize": 24,
         "code": 59381,
         "name": "notifications_none"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 528
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 8
     },
     {
       "icon": {
@@ -261,15 +311,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "report_problem, warning",
-        "id": 632,
+        "id": 9,
         "order": 23,
         "prevSize": 24,
         "code": 57346,
         "name": "warning"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 632
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 9
     },
     {
       "icon": {
@@ -288,15 +338,15 @@
       "attrs": [],
       "properties": {
         "ligatures": "search",
-        "id": 655,
+        "id": 10,
         "order": 30,
         "prevSize": 24,
         "code": 59574,
         "name": "search"
       },
-      "setIdx": 0,
-      "setId": 7,
-      "iconIdx": 655
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 10
     }
   ],
   "height": 1024,

@@ -8,3 +8,8 @@ export const VESSEL_ACTION_TYPES = {
     GET_DATA_ERROR: 'GET_DATA_ERROR'
 
 };
+
+export const VESSEL_DETAILS_MAP = {
+    TOGGLE_FOOTER: 'VESSEL_DETAILS_MAP'
+};
+
