@@ -80,12 +80,12 @@ export const styles = {
     },
     touchableContainer: {
         backgroundColor: colors['primaryColor2'],
-        marginTop: 10,
+        //marginTop: 10,
         paddingTop: 12,
         paddingBottom: 12,
         paddingLeft: 12,
         paddingRight: 12,
-        borderWidth: 1,
+        //borderWidth: 1,
         borderColor: colors['primaryColor1Opacity']
     },
     touchableAlert: {

@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, FlatList, ActivityIndicator } from 'react-native';
+import { View, FlatList, ActivityIndicator, Text } from 'react-native';
 import { connect } from 'react-redux';
+
+import {SwipeableFlatList} from 'react-native-swipeable-flat-list';
 
 import AlertsNotificationListItem from './AlertsNotificationListItem'
 
 import { styles } from './AlertsNotificationStyle';
 
-import { getData } from '../../actions';
+import { getData } from '../../actions/index';
 
 class ListAlertsAndNotifications extends React.Component {
     componentWillMount(){
@@ -51,7 +53,29 @@ class ListAlertsAndNotifications extends React.Component {
 
         return (
             <View style={listContainer}>
-                <FlatList
+                <SwipeableFlatList
+                    style={{ borderWidth: 0 }}
+                    data={this.props.dataStena}
+                    renderItem={({item}) => {
+                        return this._renderItem(item)
+                    }}
+                    renderLeft={({ item }) => (
+                        <Text style={{ width: 40, height: 65 }}>{item.name}</Text>
+                    )}
+                    renderRight={({ item }) => (
+                        <Text style={{ width: 100, height: 65 }}>{item.name}</Text>
+                    )}
+                    keyExtractor={(item) => { return item.key }}
+                    extraData={this.state}
+                    ListFooterComponent={() => {
+                        return this.renderFooter()
+                    }}
+                    onEndReachedThreshold={1}
+                    onEndReached={({ distanceFromEnd }) => {
+                        // TODO loader
+                    }}
+                />
+{/*                <FlatList
                     data={this.props.dataStena}
                     renderItem={({item}) => {
                        return this._renderItem(item)
@@ -65,7 +89,7 @@ class ListAlertsAndNotifications extends React.Component {
                     onEndReached={({ distanceFromEnd }) => {
                        // TODO loader
                     }}
-                />
+                />*/}
             </View>
         );
     }

@@ -20,73 +20,17 @@ class RouterComponent extends Component {
         const {RESET, REPLACE} = ActionConst;
         return (
             <Router>
-                <Scene key="auth">
-                    <Scene
-                        key="login"
-                        component={LogIn}
-                        initial
-                        hideNavBar
-                    />
-                </Scene>
-
-                <Scene key="main"
-                       style={{paddingTop: STATUSBAR_HEIGHT}}
-                       type={RESET}
-                >
-                    <Scene
-                        key="dashboard"
-                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
-                        component={Dashboard}
-                        title="OPERATIONAL PLATFORM DASHBOARD"
-                        navBar={CustomNavBar}
-                        initial
-                        type={REPLACE}
-                    />
-                    <Scene
-                        key="alerts"
-                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
-                        component={AlertsNotification}
-                        navBar={CustomNavBar}
-                        icons={true}
-                        leftIcon="dashboard"
-                        rightIcon="search"
-                        title="ALERTS & NOTIFICATIONS"
-                        type={REPLACE}
-                    />
-                    <Scene
-                        key="globalMap"
-                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
-                        navBar={CustomNavBar}
-                        component={GlobalMap}
-                        icons={true}
-                        leftIcon="dashboard"
-                        rightIcon="search"
-                        title="Global Map"
-                        type={REPLACE}
-                    />
-                    <Scene
-                        key="shipDetailsMap"
-                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
-                        navBar={CustomNavBar}
-                        component={VesselDetailsMap}
-                        icons={true}
-                        rightIcon="search"
-                        leftIcon="back"
-                        title="Vessel Details Map"
-                        type={REPLACE}
-                    />
-                    <Scene
-                        key="filters"
-                        sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
-                        component={FiltersVessel}
-                        navBar={CustomNavBar}
-                        icons={true}
-                        leftIcon="back-button"
-                        rightIcon="search"
-                        rightIconAlert="notifications_active"
-                        title="FILTERS"
-                    />
-                </Scene>
+                <Scene
+                    key="alerts"
+                    sceneStyle={{paddingTop: STATUSBAR_HEIGHT}}
+                    component={AlertsNotification}
+                    navBar={CustomNavBar}
+                    icons={true}
+                    leftIcon="dashboard"
+                    rightIcon="search"
+                    title="ALERTS & NOTIFICATIONS"
+                    type={REPLACE}
+                />
             </Router>
         );
     }

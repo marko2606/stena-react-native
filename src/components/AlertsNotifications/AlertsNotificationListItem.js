@@ -59,7 +59,7 @@ class AlertsNotificationListItem extends Component {
                         }
                     </View>
                 </TouchableWithoutFeedback>
-                { this.props.item.activeClick ? this.moreInfoAfterClick(this.props.item) : null }
+               {/* { this.props.item.activeClick ? this.moreInfoAfterClick(this.props.item) : null }*/}
             </View>
         );
     }
